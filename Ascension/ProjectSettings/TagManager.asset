@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Terrain
+    uniqueID: 488388575
+    locked: 0
+  - name: Walls
+    uniqueID: 2294004113
+    locked: 0
+  - name: Player
+    uniqueID: 2819116987
+    locked: 0
