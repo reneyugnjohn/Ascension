@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("collision with " + other.gameObject);
         BasicEnemy enemy = other.gameObject.GetComponent<BasicEnemy>();
         if (enemy != null)
         {
