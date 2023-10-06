@@ -1,28 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class BasicEnemy : MonoBehaviour
 {
     public Transform player;
+    private Animator anim;
+    private SpriteRenderer sprite;
     public float moveSpeed = 5f;
     public int maxHealth = 5;
     public int health { get { return currentHealth; } }
     int currentHealth;
     private Rigidbody2D rb;
     private Vector2 movement;
+    Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction  = player.position - transform.position;
+        direction = player.position - transform.position;
         direction.Normalize();
         movement = direction;
 
@@ -45,6 +51,30 @@ public class BasicEnemy : MonoBehaviour
     public void ChangeHealth(int amt)
     {
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
+    }
+
+    void UpdateAnimation()
+    {
+        if (Mathf.Abs(direction.x) > 0f)
+        {
+            anim.SetFloat("Speed", Mathf.Abs(direction.x));
+            if (direction.x < 0f)
+            {
+                sprite.flipX = true;
+            }
+            else
+            {
+                sprite.flipX = false;
+            }
+        }
+        else if (Mathf.Abs(direction.y) > 0f)
+        {
+            anim.SetFloat("Speed", Mathf.Abs(direction.y));
+        }
+        else
+        {
+            anim.SetFloat("Speed", 0f);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
