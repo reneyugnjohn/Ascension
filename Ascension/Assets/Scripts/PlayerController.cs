@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     public GameOverScreen gameOver;
 
+    public GameObject bow;
+ 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,12 +54,15 @@ public class PlayerController : MonoBehaviour
             if (invincibleTimer < 0)
                 isInvincible = false;
         }
+
+        UpdateAnimation();
+
     }
 
     void FixedUpdate()
     {
         Move();
-        UpdateAnimation();
+        
     }
 
     void ProcessInputs()
@@ -86,17 +92,20 @@ public class PlayerController : MonoBehaviour
 
     void UpdateAnimation()
     {
+        if (bow.transform.position.x < transform.position.x)
+        {
+            sprite.flipX = true;
+        }
+        else
+        {
+            sprite.flipX = false;
+        }
+
+
         if (Mathf.Abs(moveX) > 0f)
         {
             anim.SetFloat("Speed", Mathf.Abs(moveX));
-            if (moveX < 0f)
-            {
-                sprite.flipX = true;
-            }
-            else
-            {
-                sprite.flipX = false;
-            }
+            
         }
         else if (Mathf.Abs(moveY) > 0f)
         {
@@ -127,5 +136,6 @@ public class PlayerController : MonoBehaviour
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
+        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
 }

@@ -41,6 +41,7 @@ public class BasicEnemy : MonoBehaviour
     private void FixedUpdate()
     {
         moveCharacter(movement);
+        UpdateAnimation();
     }
 
     void moveCharacter(Vector2 direction)
