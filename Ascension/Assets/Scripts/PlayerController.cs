@@ -10,11 +10,20 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
 
+    public int maxHealth = 10;
+    public int health { get { return currentHealth; } }
+    public int currentHealth;
+    bool isInvincible;
+    float invincibleTimer;
+    public float hurtDelay = 1.0f;
+
     [SerializeField] private float moveSpeed = 7f;
     private Vector2 moveDirection;
     float moveX;
     float moveY;
     bool roll;
+
+    public GameOverScreen gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +31,26 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         ProcessInputs();
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("DEATH");
+            gameOver.Setup();
+        }
+
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                isInvincible = false;
+        }
     }
 
     void FixedUpdate()
@@ -89,5 +112,20 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Roll");
             roll = false;
         }
+    }
+
+    public void ChangeHealth(int amt)
+    {
+        if (amt < 0)
+        {
+            if (isInvincible)
+                return;
+
+            isInvincible = true;
+            invincibleTimer = hurtDelay;
+
+        }
+
+        currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
     }
 }

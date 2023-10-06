@@ -44,6 +44,15 @@ public class BasicEnemy : MonoBehaviour
 
     public void ChangeHealth(int amt)
     {
-        currentHealth = Mathf.Clamp(currentHealth - amt, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
 }

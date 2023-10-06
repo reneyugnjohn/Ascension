@@ -29,7 +29,6 @@ public class Door : MonoBehaviour
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
         if (player != null && open)
         {
-            Debug.Log("yay");
             player.transform.position = new Vector3(exitPoint.transform.position.x, exitPoint.transform.position.y - 2, 0);
         }
     }
