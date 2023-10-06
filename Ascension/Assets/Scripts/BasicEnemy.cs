@@ -15,6 +15,7 @@ public class BasicEnemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     Vector3 direction;
+    bool attack;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,16 @@ public class BasicEnemy : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+            attack = true;
+        }
+    }
+
     void UpdateAnimation()
     {
         if (Mathf.Abs(direction.x) > 0f)
@@ -76,14 +87,11 @@ public class BasicEnemy : MonoBehaviour
         {
             anim.SetFloat("Speed", 0f);
         }
-    }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        if (player != null)
+        if (attack)
         {
-            player.ChangeHealth(-1);
+            anim.SetTrigger("Attack");
+            attack = false;
         }
     }
 }
