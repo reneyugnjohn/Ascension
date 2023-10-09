@@ -138,4 +138,9 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
+    public void TriggerGameOver()
+    {
+        Debug.Log("Game Over");
+        gameOver.Setup();
+    }
 }

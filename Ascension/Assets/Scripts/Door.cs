@@ -29,7 +29,13 @@ public class Door : MonoBehaviour
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
         if (player != null && open)
         {
+            if (gameObject.CompareTag("FinalDoor"))
+            {
+                player.TriggerGameOver();
+            }
             player.transform.position = new Vector3(exitPoint.transform.position.x, exitPoint.transform.position.y - 2, 0);
+
         }
+
     }
 }
