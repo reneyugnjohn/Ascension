@@ -6806,10 +6806,9 @@ RectTransform:
   m_Father: {fileID: 528955022}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -23.8}
-  m_AnchoredPosition: {x: 120, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 120, y: -0.4}
   m_SizeDelta: {x: 240, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543257419
@@ -10092,10 +10091,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9053528955444369312, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13088,10 +13083,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 598432689}
     m_Modifications:
-    - target: {fileID: 3146420315916128858, guid: 46d3158455685d649a40153c4d5946af, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4803168749450077603, guid: 46d3158455685d649a40153c4d5946af, type: 3}
       propertyPath: m_Name
       value: Zombie
