@@ -9,21 +9,30 @@ public class BasicEnemy : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     public float moveSpeed = 5f;
-    public int maxHealth = 5;
-    public int health { get { return currentHealth; } }
-    int currentHealth;
+    public float maxHealth;
+    public float health { get { return currentHealth; } }
+    float currentHealth;
     private Rigidbody2D rb;
     private Vector2 movement;
     Vector3 direction;
     bool attack;
+    EnemyHealthbar healthbar;
 
     // Start is called before the first frame update
+
+  /*  void Awake()
+    {
+        healthbar = GetComponentInChildren<EnemyHealthbar>();
+    }*/
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
+        healthbar = GetComponentInChildren<EnemyHealthbar>();
+        healthbar.UpdateHealthbar(health, maxHealth);
     }
 
     // Update is called once per frame
@@ -53,6 +62,12 @@ public class BasicEnemy : MonoBehaviour
     public void ChangeHealth(int amt)
     {
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
+        healthbar.UpdateHealthbar(currentHealth, maxHealth);
+    }
+
+    public void OnHit(Vector2 knockback)
+    {
+        rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
     void OnCollisionEnter2D(Collision2D other)

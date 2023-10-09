@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float speed;
+    public float knockbackForce = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,9 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
         {
             enemy.ChangeHealth(-1);
+            Vector2 direction = (other.collider.transform.position - transform.position).normalized;
+            Vector2 knockback = direction * knockbackForce;
+            enemy.OnHit(knockback);
         }
         Destroy(gameObject);
     }
