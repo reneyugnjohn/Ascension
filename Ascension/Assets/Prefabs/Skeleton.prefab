@@ -424,7 +424,11 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
+<<<<<<< HEAD
   m_SizeDelta: {x: 1, y: 1}
+=======
+  m_SizeDelta: {x: 100, y: 100}
+>>>>>>> 93e6170 (add PathfinderAI api)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &85440302159052655
 Canvas:
