@@ -15,8 +15,8 @@ TagManager:
   - Character
   - Projectile
   - Enemy
-  - 
-  - 
+  - Room1_Tilemap
+  - Room2_Tilemap
   - 
   - 
   - 
