@@ -50,7 +50,7 @@ public class BasicEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveCharacter(movement);
+        // moveCharacter(movement);
         UpdateAnimation();
     }
 
