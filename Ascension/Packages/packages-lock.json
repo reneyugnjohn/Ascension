@@ -14,11 +14,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.aseprite": {
-<<<<<<< HEAD
       "version": "1.0.0",
-=======
-      "version": "1.0.1",
->>>>>>> 93e6170 (add PathfinderAI api)
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -87,11 +83,7 @@
       }
     },
     "com.unity.2d.tilemap.extras": {
-<<<<<<< HEAD
       "version": "3.1.0",
-=======
-      "version": "3.1.1",
->>>>>>> 93e6170 (add PathfinderAI api)
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -103,11 +95,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-<<<<<<< HEAD
       "version": "1.8.7",
-=======
-      "version": "1.8.8",
->>>>>>> 93e6170 (add PathfinderAI api)
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -116,11 +104,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-<<<<<<< HEAD
       "version": "2.0.5",
-=======
-      "version": "2.0.7",
->>>>>>> 93e6170 (add PathfinderAI api)
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -154,13 +138,8 @@
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "9.0.2",
         "com.unity.2d.tilemap": "1.0.0",
-<<<<<<< HEAD
         "com.unity.2d.tilemap.extras": "3.1.0",
         "com.unity.2d.aseprite": "1.0.0"
-=======
-        "com.unity.2d.tilemap.extras": "3.1.1",
-        "com.unity.2d.aseprite": "1.0.1"
->>>>>>> 93e6170 (add PathfinderAI api)
       }
     },
     "com.unity.ide.rider": {
@@ -247,11 +226,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-<<<<<<< HEAD
       "version": "1.7.4",
-=======
-      "version": "1.7.5",
->>>>>>> 93e6170 (add PathfinderAI api)
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -272,11 +247,7 @@
       }
     },
     "com.unity.visualscripting": {
-<<<<<<< HEAD
       "version": "1.8.0",
-=======
-      "version": "1.9.0",
->>>>>>> 93e6170 (add PathfinderAI api)
       "depth": 0,
       "source": "registry",
       "dependencies": {
