@@ -50,7 +50,6 @@ public class BasicEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-<<<<<<< HEAD
         moveCharacter(movement);
         UpdateAnimation();
     }
@@ -59,16 +58,6 @@ public class BasicEnemy : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
-=======
-        // moveCharacter(movement);
-        UpdateAnimation();
-    }
-
-    // void moveCharacter(Vector2 direction)
-    // {
-    //     rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
-    // }
->>>>>>> 93e6170 (add PathfinderAI api)
 
     public void ChangeHealth(int amt)
     {
@@ -89,11 +78,6 @@ public class BasicEnemy : MonoBehaviour
             player.ChangeHealth(-1);
             attack = true;
         }
-<<<<<<< HEAD
-=======
-        Vector4 bulletDirection = lookAtTransform.forward;
-        rb.AddForce(-1.0f * bulletDirection * knockbackPower, ForceMode2D.Impulse)
->>>>>>> 93e6170 (add PathfinderAI api)
     }
 
     void UpdateAnimation()
