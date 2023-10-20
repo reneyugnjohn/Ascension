@@ -17,6 +17,7 @@ public class BasicEnemy : MonoBehaviour
     Vector3 direction;
     bool attack;
     EnemyHealthbar healthbar;
+    //public GameObject hpPot;
 
     // Start is called before the first frame update
 
@@ -45,6 +46,7 @@ public class BasicEnemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
+            //Instantiate(hpPot, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         }
     }
 
@@ -63,11 +65,6 @@ public class BasicEnemy : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
         healthbar.UpdateHealthbar(currentHealth, maxHealth);
-    }
-
-    public void OnHit(Vector2 knockback)
-    {
-        rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
     void OnCollisionEnter2D(Collision2D other)
