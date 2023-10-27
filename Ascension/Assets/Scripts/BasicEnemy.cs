@@ -21,11 +21,6 @@ public class BasicEnemy : MonoBehaviour
 
     // Start is called before the first frame update
 
-  /*  void Awake()
-    {
-        healthbar = GetComponentInChildren<EnemyHealthbar>();
-    }*/
-
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -46,7 +41,7 @@ public class BasicEnemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
-            //Instantiate(hpPot, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            GetComponent<LootBag>().InstantiateLoot(transform.position);
         }
     }
 
