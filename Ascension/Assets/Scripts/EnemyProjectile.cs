@@ -23,7 +23,9 @@ public class EnemyProjectile : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+            Debug.Log("hit");
         }
+        Debug.Log("2hit");
         Destroy(gameObject);
     }
 }
