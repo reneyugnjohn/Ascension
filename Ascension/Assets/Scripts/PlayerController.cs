@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
 
-    public int maxHealth = 10;
+    public int maxHealth = 5;
     public int health { get { return currentHealth; } }
     public int currentHealth;
     bool isInvincible;
