@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FinalDoor
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Room2_Tilemap
   - Item
   - Room3_Tilemap
-  - 
+  - EnemyProjectile
   - 
   - 
   - 

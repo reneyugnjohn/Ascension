@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 7400465577612121787}
   - component: {fileID: 5194314796819383870}
   - component: {fileID: -1211654409364524254}
+  - component: {fileID: 2669078708738341643}
   m_Layer: 8
   m_Name: Zombie
   m_TagString: Untagged
@@ -445,7 +446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 2
-  maxHealth: 5
 --- !u!95 &5194314796819383870
 Animator:
   serializedVersion: 5
@@ -482,6 +482,20 @@ MonoBehaviour:
   lootList:
   - {fileID: 11400000, guid: de80d13594365544b81496aec913c917, type: 2}
   dropForce: 50
+--- !u!114 &2669078708738341643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803168749450077603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d49457f37c98a40850a37a949fc75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 5
 --- !u!1 &5241226648188528028
 GameObject:
   m_ObjectHideFlags: 0
