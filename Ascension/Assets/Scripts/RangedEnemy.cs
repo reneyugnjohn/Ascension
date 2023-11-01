@@ -8,15 +8,19 @@ public class RangedEnemy : MonoBehaviour
     public Transform shotPoint;
     public Transform gun;
     public GameObject bullet;
+    private SpriteRenderer sprite;
+    Vector3 direction;
 
     public bool canFire;
     private float timer;
     public float timeBetweenFiring = 5f;
+    public float atkRange;
     Damageable dmg;
 
     void Start()
     {
         dmg = GetComponent<Damageable>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -24,8 +28,15 @@ public class RangedEnemy : MonoBehaviour
         Vector3 difference = player.position - gun.transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         gun.transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-        if (canFire)
+
+        direction = player.position - transform.position;
+        direction.Normalize();
+        UpdateAnimation();
+
+        //If enemy is ready to fire and player is in range
+        if (canFire && Vector2.Distance(transform.position, player.position) <= atkRange)
         {
+            timer = 0;
             canFire = false;
             Fire();
         }
@@ -35,7 +46,6 @@ public class RangedEnemy : MonoBehaviour
             if (timer > timeBetweenFiring)
             {
                 canFire = true;
-                timer = 0;
             } 
         }
 
@@ -50,5 +60,27 @@ public class RangedEnemy : MonoBehaviour
     {
         Instantiate(bullet, shotPoint.position, shotPoint.transform.rotation);
 
+    }
+
+    //Draws a circle to help see what his range is
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, atkRange);
+    }
+
+    void UpdateAnimation()
+    {
+        if (Mathf.Abs(direction.x) > 0f)
+        {
+            if (direction.x > 0f)
+            {
+                sprite.flipX = true;
+            }
+            else
+            {
+                sprite.flipX = false;
+            }
+        }
     }
 }
