@@ -3989,7 +3989,7 @@ MonoBehaviour:
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
     cacheStartup: 0
-  showNavGraphs: 1
+  showNavGraphs: 0
   showUnwalkableNodes: 1
   debugMode: 0
   debugFloor: 0
@@ -3997,7 +3997,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -4048,7 +4048,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -11268,6 +11268,7 @@ GameObject:
   - component: {fileID: 767091488}
   - component: {fileID: 767091493}
   - component: {fileID: 767091492}
+  - component: {fileID: 767091494}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -11454,6 +11455,19 @@ MonoBehaviour:
   moveSpeed: 7
   gameOver: {fileID: 675817345}
   bow: {fileID: 2132618714}
+--- !u!114 &767091494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767091487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe092fd8ddbc6844a165dc78ae0a5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doubleFire: 0
 --- !u!1 &770973074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4803168749450077603, guid: 46d3158455685d649a40153c4d5946af, type: 3}
@@ -16065,7 +16079,7 @@ MonoBehaviour:
   bullet: {fileID: 9016940387383427446, guid: e1237a91c75397c459b85948a0ae80e4, type: 3}
   bulletTransform: {fileID: 2132618715}
   canFire: 1
-  timeBetweenFiring: 0.5
+  timeBetweenFiring: 1
 --- !u!4 &892755517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7315936665547348327, guid: 9d9a4bda727aa4d4987574c9544880ce, type: 3}

@@ -11,10 +11,13 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    float delay;
+    Upgrades upg;
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();   
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
+        upg = GetComponentInParent<Upgrades>();
     }
 
     // Update is called once per frame
@@ -42,8 +45,22 @@ public class Shooting : MonoBehaviour
         if(Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            if (upg.doubleFire)
+            {
+                StartCoroutine(DoubleFire());
+            }
+            else
+            {
+                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            }
         }
 
+    }
+
+    IEnumerator DoubleFire()
+    {
+        Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.1f);
+        Instantiate(bullet, bulletTransform.position, Quaternion.identity);
     }
 }

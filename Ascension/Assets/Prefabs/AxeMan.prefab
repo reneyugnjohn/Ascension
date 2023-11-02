@@ -259,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootList:
   - {fileID: 11400000, guid: de80d13594365544b81496aec913c917, type: 2}
+  - {fileID: 11400000, guid: 881cdbcf7941b104ba6853ca83fb44a0, type: 2}
   dropForce: 50
 --- !u!114 &7309686501620725943
 MonoBehaviour:
