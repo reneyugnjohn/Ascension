@@ -24,4 +24,10 @@ public class PauseMenu : MonoBehaviour
             canvas.SetActive(!isPaused);
         }
     }
+
+    public void CloseMenuOnClick()
+    {
+        canvas.SetActive(false);
+        Time.timeScale = 1;
+    }
 }
