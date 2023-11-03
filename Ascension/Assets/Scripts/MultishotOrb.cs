@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoubleFireOrb : MonoBehaviour
+public class MultishotOrb : MonoBehaviour
 {
+    public Sprite icon;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,10 @@ public class DoubleFireOrb : MonoBehaviour
         Upgrades playerUp = other.gameObject.GetComponent<Upgrades>();
         if (player != null)
         {
-            playerUp.doubleFire = true;
+            if (!playerUp.multiShot)
+            { 
+                playerUp.setMultiShot(true, icon);
+            }
             Destroy(gameObject);
         }
 

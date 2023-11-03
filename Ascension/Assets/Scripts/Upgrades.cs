@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Upgrades : MonoBehaviour
 {
-    public bool doubleFire = false;
+    public bool multiShot = false;
+    [SerializeField] UpgradeInventoryUI InvUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,15 @@ public class Upgrades : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void setMultiShot(bool inInv, Sprite icon)
+    {
+        
+        multiShot = inInv;
+        if(inInv)
+        {
+            InvUI.UpdateIcons(icon);
+        }
     }
 }

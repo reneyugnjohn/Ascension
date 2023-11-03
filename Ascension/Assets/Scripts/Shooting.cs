@@ -45,7 +45,7 @@ public class Shooting : MonoBehaviour
         if(Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
-            if (upg.doubleFire)
+            if (upg.multiShot)
             {
                 StartCoroutine(DoubleFire());
             }
