@@ -10,7 +10,7 @@ public class UpgradeInventoryUI : MonoBehaviour
     private GameObject icon1;
     private GameObject icon2;
     private GameObject icon3;
-    private bool has1, has2;
+    private bool has1, has2, has3;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,18 +26,40 @@ public class UpgradeInventoryUI : MonoBehaviour
 
     }
 
+    public void UpdateIcons(Sprite icon)
+    {
+        if (!has1)
+        {
+            UpdateIcon1(icon);
+        }
+        else
+        {
+            if(has1)
+            {
+                UpdateIcon2(icon);
+            }
+            else
+            {
+                UpdateIcon3(icon);
+            }
+        }
+    }
+
     public void UpdateIcon1(Sprite icon)
     {
         icon1.GetComponent<Image>().sprite = icon;
+        has1 = true;
     }
 
-    public void UpdateIcon2()
+    public void UpdateIcon2(Sprite icon)
     {
-
+        icon2.GetComponent<Image>().sprite = icon;
+        has2 = true;
     }
 
-    public void UpdateIcon3()
+    public void UpdateIcon3(Sprite icon)
     {
-
+        icon3.GetComponent<Image>().sprite = icon;
+        has3 = true;
     }
 }

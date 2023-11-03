@@ -23,7 +23,10 @@ public class MultishotOrb : MonoBehaviour
         Upgrades playerUp = other.gameObject.GetComponent<Upgrades>();
         if (player != null)
         {
-            playerUp.setMultiShot(true, icon);
+            if (!playerUp.multiShot)
+            { 
+                playerUp.setMultiShot(true, icon);
+            }
             Destroy(gameObject);
         }
 
