@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4690279572084249196}
   - component: {fileID: 1430542409129628818}
   m_Layer: 11
-  m_Name: DoubleFireOrb
+  m_Name: MultishotOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: -1475850309
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.36845854, g: 0.6792453, b: 0.6441176, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ab603de591a66a44c99a4d218a34d12f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b852e1372ae8a24db63c97726f90bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: a8f80dd9f12474c4cbe3ff13fd8248e5, type: 3}
