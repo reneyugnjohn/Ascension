@@ -9,6 +9,7 @@ public class RangedEnemy : MonoBehaviour
     public Transform gun;
     public GameObject bullet;
     private SpriteRenderer sprite;
+    private Animator anim;
     Vector3 direction;
 
     public bool canFire;
@@ -21,6 +22,7 @@ public class RangedEnemy : MonoBehaviour
     {
         dmg = GetComponent<Damageable>();
         sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -73,6 +75,7 @@ public class RangedEnemy : MonoBehaviour
     {
         if (Mathf.Abs(direction.x) > 0f)
         {
+            anim.SetFloat("Speed", Mathf.Abs(direction.x));
             if (direction.x > 0f)
             {
                 sprite.flipX = true;
@@ -81,6 +84,14 @@ public class RangedEnemy : MonoBehaviour
             {
                 sprite.flipX = false;
             }
+        }
+        else if (Mathf.Abs(direction.y) > 0f)
+        {
+            anim.SetFloat("Speed", Mathf.Abs(direction.y));
+        }
+        else
+        {
+            anim.SetFloat("Speed", 0f);
         }
     }
 }
