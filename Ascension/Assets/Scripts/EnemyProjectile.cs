@@ -15,6 +15,7 @@ public class EnemyProjectile : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         //rb = GetComponent<Rigidbody2D>();
         //rb.velocity = transform.right * speed;
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
