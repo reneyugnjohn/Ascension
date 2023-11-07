@@ -10,16 +10,19 @@ public class BonePile : MonoBehaviour
     [SerializeField] GameObject skeleton;
     [SerializeField] GameObject healthPot;
     [SerializeField] GameObject multiShot;
+    Vector2 startingPos;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        startingPos.x = transform.position.x;
+        startingPos.y = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Spawn();
             Destroy(gameObject);
@@ -32,6 +35,18 @@ public class BonePile : MonoBehaviour
         if (arrow != null)
         {
             currentHealth--;
+            StartCoroutine(Shake());
+        }
+    }
+
+    IEnumerator Shake()
+    {
+        float currTime = 0f;
+        while (currTime < .1)
+        { 
+            transform.position = new Vector2(startingPos.x + Mathf.Sin(Time.time * 50f) * .05f, startingPos.y);
+            yield return null;
+            currTime += Time.deltaTime;
         }
     }
 

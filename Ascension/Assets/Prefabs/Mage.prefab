@@ -263,7 +263,7 @@ MonoBehaviour:
   gun: {fileID: 4962399784307486937}
   bullet: {fileID: 2949291716403249886, guid: eb83137b2b6351948bcfa8e3c79d7c91, type: 3}
   canFire: 0
-  timeBetweenFiring: 3
+  timeBetweenFiring: 2
   atkRange: 7
 --- !u!114 &6302619183530246738
 MonoBehaviour:
