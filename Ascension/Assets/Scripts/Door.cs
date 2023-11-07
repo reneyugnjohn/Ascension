@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -31,7 +32,7 @@ public class Door : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        if (player != null && open)
+        if (player != null && (open || gameObject.CompareTag("tutorialDoor" )))
         {
             if (gameObject.CompareTag("FinalDoor"))
             {

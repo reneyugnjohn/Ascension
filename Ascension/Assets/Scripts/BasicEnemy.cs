@@ -14,8 +14,9 @@ public class BasicEnemy : MonoBehaviour
     private Vector2 movement;
     Vector3 direction;
     bool attack;
-
     Damageable dmg;
+
+    private CameraController camController;
 
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class BasicEnemy : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         dmg = GetComponent<Damageable>();
+        camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     // Update is called once per frame
@@ -60,6 +62,7 @@ public class BasicEnemy : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+            camController.StartCameraShake();
             attack = true;
         }
     }

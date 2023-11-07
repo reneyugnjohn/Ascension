@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
     public GameOverScreen gameOver;
 
     public GameObject bow;
- 
+
+    public ParticleSystem dust;
+
 
     // Start is called before the first frame update
     void Start()
@@ -82,19 +84,29 @@ public class PlayerController : MonoBehaviour
     {
         if (rolling)
         {
+            createDust();
             rb.AddForce(moveDirection * 50f, ForceMode2D.Force);
         }
         else
         {
             rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+
+            bool isMoving = Mathf.Abs(moveDirection.x) > 0f || Mathf.Abs(moveDirection.y) > 0f;
+
+            if (isMoving)
+            {
+                createDust();
+            }
         }
     }
 
     void UpdateAnimation()
     {
+
         if (bow.transform.position.x < transform.position.x)
         {
             sprite.flipX = true;
+            
         }
         else
         {
@@ -104,15 +116,18 @@ public class PlayerController : MonoBehaviour
 
         if (Mathf.Abs(moveX) > 0f)
         {
+            
             anim.SetFloat("Speed", Mathf.Abs(moveX));
             
         }
         else if (Mathf.Abs(moveY) > 0f)
         {
+            
             anim.SetFloat("Speed", Mathf.Abs(moveY));
         }
         else
         {
+            
             anim.SetFloat("Speed", 0f);
         }
 
@@ -148,5 +163,10 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Game Over");
         gameOver.Setup();
+    }
+
+    void createDust()
+    {
+        dust.Play();
     }
 }

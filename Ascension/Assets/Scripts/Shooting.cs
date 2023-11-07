@@ -12,11 +12,16 @@ public class Shooting : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
     float delay;
+
+    public cameraShake camShake;
+    private CameraController camController;
+
     Upgrades upg;
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
+        camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         upg = GetComponentInParent<Upgrades>();
     }
 
@@ -52,6 +57,7 @@ public class Shooting : MonoBehaviour
             else
             {
                 Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                camController.StartCameraShake();
             }
         }
 
