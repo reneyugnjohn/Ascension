@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.Rendering.Universal;
 
 public class BasicEnemy : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class BasicEnemy : MonoBehaviour
     Damageable dmg;
 
     private CameraController camController;
+    private changeLight lightScript;
 
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class BasicEnemy : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         dmg = GetComponent<Damageable>();
         camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+        lightScript = GameObject.FindGameObjectWithTag("light").GetComponent<changeLight>();
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class BasicEnemy : MonoBehaviour
         {
             player.ChangeHealth(-1);
             camController.StartCameraShake();
+            lightScript.ChangeToRed();
             attack = true;
         }
     }
