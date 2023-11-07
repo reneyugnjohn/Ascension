@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 7503920864008618292}
   - component: {fileID: 3853730169413079021}
   - component: {fileID: 1341684319808980828}
+  - component: {fileID: 3052449163939816949}
   m_Layer: 8
   m_Name: Mage
   m_TagString: Enemy
@@ -103,7 +104,7 @@ Transform:
   - {fileID: 704348852780963311}
   - {fileID: 4962399784307486937}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &299350651420965005
 SpriteRenderer:
@@ -260,7 +261,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shotPoint: {fileID: 6527684670473447073}
   gun: {fileID: 4962399784307486937}
-  bullet: {fileID: 4660809038005940658, guid: df961226713537b4ea211f5f8c12282c, type: 3}
+  bullet: {fileID: 2949291716403249886, guid: eb83137b2b6351948bcfa8e3c79d7c91, type: 3}
   canFire: 0
   timeBetweenFiring: 3
   atkRange: 7
@@ -362,6 +363,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!95 &3052449163939816949
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3496661103413193697}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c729921bb1f9d3041bac2281fff2182b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4175138956038673857
 GameObject:
   m_ObjectHideFlags: 0
