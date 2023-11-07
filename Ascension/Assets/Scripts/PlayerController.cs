@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
     {
         if (rolling)
         {
-            createDust();
+            //createDust();
             rb.AddForce(moveDirection * 50f, ForceMode2D.Force);
         }
         else

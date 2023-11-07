@@ -62,7 +62,7 @@ public class BasicEnemy : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
-            camController.StartCameraShake();
+            //camController.StartCameraShake();
             attack = true;
         }
     }
