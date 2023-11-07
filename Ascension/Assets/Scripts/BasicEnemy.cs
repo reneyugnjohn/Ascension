@@ -5,7 +5,7 @@ using UnityEngine.U2D;
 
 public class BasicEnemy : MonoBehaviour
 {
-    public Transform player;
+    Transform playerT;
     private Animator anim;
     private SpriteRenderer sprite;
     public float moveSpeed = 5f;
@@ -22,6 +22,7 @@ public class BasicEnemy : MonoBehaviour
 
     void Start()
     {
+        playerT = GameObject.FindWithTag("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
@@ -31,7 +32,7 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = player.position - transform.position;
+        direction = playerT.position - transform.position;
         direction.Normalize();
         movement = direction;
 
