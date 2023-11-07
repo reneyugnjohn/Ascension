@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
     float moveX;
     float moveY;
-    bool roll;
+    bool rolling;
 
     public GameOverScreen gameOver;
 
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space) && (Mathf.Abs(moveX) > 0f || Mathf.Abs(moveY) > 0f))
         {
-            roll = true;
+            rolling = true;
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
@@ -80,9 +80,9 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        if (roll)
+        if (rolling)
         {
-            rb.AddForce(moveDirection * 500f, ForceMode2D.Force);
+            rb.AddForce(moveDirection * 50f, ForceMode2D.Force);
         }
         else
         {
@@ -116,18 +116,24 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("Speed", 0f);
         }
 
-        if (roll)
+        if (rolling)
         {
             anim.SetTrigger("Roll");
-            roll = false;
+            StartCoroutine(setRoll());
         }
+    }
+
+    IEnumerator setRoll()
+    {
+        yield return new WaitForSeconds(0.2f);
+        rolling = false;
     }
 
     public void ChangeHealth(int amt)
     {
         if (amt < 0)
         {
-            if (isInvincible)
+            if (isInvincible || rolling)
                 return;
 
             isInvincible = true;
