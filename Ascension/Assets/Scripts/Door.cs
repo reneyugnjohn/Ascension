@@ -22,6 +22,10 @@ public class Door : MonoBehaviour
         {
             open = true;
         }
+        else
+        {
+            open = false;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
