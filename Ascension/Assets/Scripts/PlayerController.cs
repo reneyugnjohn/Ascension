@@ -21,13 +21,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
     float moveX;
     float moveY;
-    bool rolling;
+    public bool rolling;
 
     public GameOverScreen gameOver;
 
     public GameObject bow;
 
     public ParticleSystem dust;
+
+    private CameraController camController;
+    private changeLight lightScript;
 
 
     // Start is called before the first frame update
@@ -37,6 +40,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
+        camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+        lightScript = GameObject.FindGameObjectWithTag("light").GetComponent<changeLight>();
     }
 
     // Update is called once per frame
@@ -155,7 +160,8 @@ public class PlayerController : MonoBehaviour
             invincibleTimer = hurtDelay;
 
         }
-
+        camController.StartCameraShake();
+        lightScript.ChangeToRed();
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
         //UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    private PlayerController player;
     private Camera mainCam;
     private Vector3 mousePos;
     public GameObject bullet;
@@ -20,6 +21,7 @@ public class Shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponentInParent<PlayerController>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
         camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         upg = GetComponentInParent<Upgrades>();
@@ -47,7 +49,7 @@ public class Shooting : MonoBehaviour
 
         }
 
-        if(Input.GetMouseButton(0) && canFire)
+        if(Input.GetMouseButton(0) && canFire && !player.rolling)
         {
             canFire = false;
             if (upg.multiShot)

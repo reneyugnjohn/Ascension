@@ -8,13 +8,10 @@ public class EnemyProjectile : MonoBehaviour
 
     private Rigidbody2D rb;
     public float speed;
-    private CameraController camController;
-    private changeLight lightScript;
 
     private void Start()
     {
-        camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
-        lightScript = GameObject.FindGameObjectWithTag("light").GetComponent<changeLight>();
+
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -31,8 +28,6 @@ public class EnemyProjectile : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
-            camController.StartCameraShake();
-            lightScript.ChangeToRed();
         }
         Destroy(gameObject);
     }
