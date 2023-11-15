@@ -10,13 +10,27 @@ public class LootBag : MonoBehaviour
     List<Loot> GetDroppedItems()
     {
         List<Loot> possibleItems = new List<Loot>();
-        foreach(Loot item in lootList)
+        List<Loot> possibleUpgrades = new List<Loot>();
+        foreach (Loot item in lootList)
         {
-            if(Random.Range(1, 101) <= item.dropChance)
+            if(!item.isUpgrade && Random.Range(1, 101) <= item.dropChance)
             {
                 possibleItems.Add(item);
             }
+            if(item.isUpgrade && Random.Range(1, 101) <= item.dropChance)
+            {
+                possibleUpgrades.Add(item);
+            }
         }
+
+        while(possibleUpgrades.Count > 1)
+        {
+            possibleUpgrades.RemoveAt(Random.Range(0,possibleUpgrades.Count));
+        }
+
+        if(possibleUpgrades.Count > 0)
+            possibleItems.Add(possibleUpgrades[0]);
+        
         return possibleItems;
     }
 
@@ -27,7 +41,7 @@ public class LootBag : MonoBehaviour
         {
             foreach(Loot item in droppedItems)
             {
-                //Create the loot item
+                //Create the loot item(s)
                 GameObject lootGameObject = Instantiate(item.lootPrefab, spawnPos, Quaternion.identity);
                 //Make the item move a bit when spawning
                 Vector2 dropDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));

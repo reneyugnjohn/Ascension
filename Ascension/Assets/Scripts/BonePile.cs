@@ -31,8 +31,7 @@ public class BonePile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Projectile arrow = other.gameObject.GetComponent<Projectile>();
-        if (arrow != null)
+        if(other.gameObject.tag == "PlayerProjectile")
         {
             currentHealth--;
             StartCoroutine(Shake());

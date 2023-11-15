@@ -254,7 +254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eb9f7c155d41e4baa6445c6529223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   moveSpeed: 4
 --- !u!95 &2295105952617561357
 Animator:
@@ -292,6 +291,7 @@ MonoBehaviour:
   lootList:
   - {fileID: 11400000, guid: de80d13594365544b81496aec913c917, type: 2}
   - {fileID: 11400000, guid: 881cdbcf7941b104ba6853ca83fb44a0, type: 2}
+  - {fileID: 11400000, guid: a1f3e8f515d724a4e837dcddb2559998, type: 2}
   dropForce: 50
 --- !u!114 &6273585950121637522
 MonoBehaviour:

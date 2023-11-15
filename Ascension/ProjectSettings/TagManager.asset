@@ -7,6 +7,7 @@ TagManager:
   - FinalDoor
   - Enemy
   - light
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

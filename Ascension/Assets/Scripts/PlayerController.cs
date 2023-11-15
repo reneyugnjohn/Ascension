@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.Log("DEATH");
             gameOver.Setup();
         }
 
@@ -159,15 +158,15 @@ public class PlayerController : MonoBehaviour
             isInvincible = true;
             invincibleTimer = hurtDelay;
 
+            camController.StartCameraShake();
+            lightScript.ChangeToRed();
         }
-        camController.StartCameraShake();
-        lightScript.ChangeToRed();
+        
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
         //UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     }
     public void TriggerGameOver()
     {
-        Debug.Log("Game Over");
         gameOver.Setup();
     }
 

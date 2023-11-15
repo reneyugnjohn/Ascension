@@ -5,6 +5,7 @@ using UnityEngine;
 public class Upgrades : MonoBehaviour
 {
     public bool multiShot = false;
+    public bool expArrow = false;
     [SerializeField] UpgradeInventoryUI InvUI;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,16 @@ public class Upgrades : MonoBehaviour
         
         multiShot = inInv;
         if(inInv)
+        {
+            InvUI.UpdateIcons(icon);
+        }
+    }
+
+    public void setExpArrow(bool inInv, Sprite icon)
+    {
+
+        expArrow = inInv;
+        if (inInv)
         {
             InvUI.UpdateIcons(icon);
         }

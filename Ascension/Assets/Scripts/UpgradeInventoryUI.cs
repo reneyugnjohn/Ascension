@@ -34,7 +34,7 @@ public class UpgradeInventoryUI : MonoBehaviour
         }
         else
         {
-            if(has1)
+            if(!has2)
             {
                 UpdateIcon2(icon);
             }

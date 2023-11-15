@@ -7,7 +7,11 @@ public class Shooting : MonoBehaviour
     private PlayerController player;
     private Camera mainCam;
     private Vector3 mousePos;
-    public GameObject bullet;
+
+    private GameObject chosenArrow;
+    public GameObject regArrow;
+    public GameObject expArrow;
+
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
@@ -25,6 +29,7 @@ public class Shooting : MonoBehaviour
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
         camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         upg = GetComponentInParent<Upgrades>();
+        chosenArrow = regArrow;
     }
 
     // Update is called once per frame
@@ -37,6 +42,11 @@ public class Shooting : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        if(upg.expArrow)
+        {
+            chosenArrow = expArrow;
+        }
 
         if(!canFire)
         {
@@ -58,7 +68,7 @@ public class Shooting : MonoBehaviour
             }
             else
             {
-                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                Instantiate(chosenArrow, bulletTransform.position, Quaternion.identity);
                 camController.StartCameraShake();
             }
         }
@@ -67,8 +77,8 @@ public class Shooting : MonoBehaviour
 
     IEnumerator DoubleFire()
     {
-        Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+        Instantiate(chosenArrow, bulletTransform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.1f);
-        Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+        Instantiate(chosenArrow, bulletTransform.position, Quaternion.identity);
     }
 }

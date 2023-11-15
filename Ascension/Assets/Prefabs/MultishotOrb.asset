@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: MultishotOrb
   m_EditorClassIdentifier: 
   lootName: MultishotOrb
-  dropChance: 10
+  dropChance: 5
   lootPrefab: {fileID: 7332163270543997993, guid: d773c92154a62014090386493a79bdfa, type: 3}
+  isUpgrade: 1
