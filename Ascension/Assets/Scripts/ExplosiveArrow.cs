@@ -32,11 +32,11 @@ public class ExplosiveArrow : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Damageable enemy = other.gameObject.GetComponent<Damageable>();
+        /*Damageable enemy = other.gameObject.GetComponent<Damageable>();
         if (enemy != null)
         {
             enemy.ChangeHealth(-1);
-        }
+        }*/
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }

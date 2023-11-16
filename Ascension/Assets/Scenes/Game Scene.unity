@@ -15623,6 +15623,7 @@ MonoBehaviour:
   hurtDelay: 1
   moveSpeed: 7
   rolling: 0
+  invRolling: 0
   gameOver: {fileID: 675817345}
   bow: {fileID: 2132618714}
   dust: {fileID: 1555372101}

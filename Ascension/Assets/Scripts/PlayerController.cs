@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     float moveX;
     float moveY;
     public bool rolling;
+    public bool invRolling;
 
     public GameOverScreen gameOver;
 
@@ -68,7 +69,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        
     }
 
     void ProcessInputs()
@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && (Mathf.Abs(moveX) > 0f || Mathf.Abs(moveY) > 0f))
         {
             rolling = true;
+            invRolling = true;
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
@@ -86,10 +87,10 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        if (rolling)
+        if (invRolling)
         {
-            //createDust();
-            rb.AddForce(moveDirection * 50f, ForceMode2D.Force);
+            createDust();
+            rb.AddForce(moveDirection * 25f, ForceMode2D.Force);
         }
         else
         {
@@ -97,10 +98,10 @@ public class PlayerController : MonoBehaviour
 
             bool isMoving = Mathf.Abs(moveDirection.x) > 0f || Mathf.Abs(moveDirection.y) > 0f;
 
-            if (isMoving)
+            /*if (isMoving)
             {
                 createDust();
-            }
+            }*/
         }
     }
 
@@ -138,21 +139,22 @@ public class PlayerController : MonoBehaviour
         if (rolling)
         {
             anim.SetTrigger("Roll");
+            rolling = false;
             StartCoroutine(setRoll());
         }
     }
 
     IEnumerator setRoll()
     {
-        yield return new WaitForSeconds(0.2f);
-        rolling = false;
+        yield return new WaitForSeconds(0.3f);
+        invRolling = false;
     }
 
     public void ChangeHealth(int amt)
     {
         if (amt < 0)
         {
-            if (isInvincible || rolling)
+            if (isInvincible || invRolling)
                 return;
 
             isInvincible = true;

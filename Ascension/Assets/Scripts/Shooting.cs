@@ -59,7 +59,7 @@ public class Shooting : MonoBehaviour
 
         }
 
-        if(Input.GetMouseButton(0) && canFire && !player.rolling)
+        if(Input.GetMouseButton(0) && canFire && !player.invRolling)
         {
             canFire = false;
             if (upg.multiShot)
@@ -69,7 +69,7 @@ public class Shooting : MonoBehaviour
             else
             {
                 Instantiate(chosenArrow, bulletTransform.position, Quaternion.identity);
-                camController.StartCameraShake();
+                //camController.StartCameraShake();
             }
         }
 
