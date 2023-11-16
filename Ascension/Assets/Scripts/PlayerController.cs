@@ -140,6 +140,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Roll");
             rolling = false;
+            bow.SetActive(false);
             StartCoroutine(setRoll());
         }
     }
@@ -148,6 +149,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         invRolling = false;
+        bow.SetActive(true);
     }
 
     public void ChangeHealth(int amt)
