@@ -35,7 +35,7 @@ public class Upgrades : MonoBehaviour
         expArrow = inInv;
         if (inInv)
         {
-            InvUI.UpdateIcons(icon);
+            InvUI.UpdateIcon1(icon);
         }
     }
 }

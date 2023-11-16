@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - light
   - PlayerProjectile
+  - Canvas
   layers:
   - Default
   - TransparentFX
