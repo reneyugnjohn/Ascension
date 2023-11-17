@@ -7,11 +7,14 @@ public class ExArrowOrb : MonoBehaviour
     public Sprite icon;
     PickUpScreen itemScreen;
     GameObject eIndicator;
+    string name, desc;
     // Start is called before the first frame update
     void Start()
     {
         itemScreen = GameObject.FindWithTag("Canvas").GetComponent<PickUpScreen>();
         eIndicator = transform.GetChild(0).GetChild(0).gameObject;
+        name = "Explosive Arrow";
+        desc = "Arrows deal AOE damage";
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class ExArrowOrb : MonoBehaviour
         Upgrades playerUp = other.gameObject.GetComponent<Upgrades>();
         if (player != null && Input.GetKeyDown(KeyCode.E))
         {
-            itemScreen.Appear();
+            itemScreen.Appear(name, desc, icon);
             StartCoroutine(Decision(playerUp));
         }
     }
