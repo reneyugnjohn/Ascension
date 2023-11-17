@@ -6,10 +6,12 @@ public class ExArrowOrb : MonoBehaviour
 {
     public Sprite icon;
     PickUpScreen itemScreen;
+    GameObject eIndicator;
     // Start is called before the first frame update
     void Start()
     {
         itemScreen = GameObject.FindWithTag("Canvas").GetComponent<PickUpScreen>();
+        eIndicator = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -27,6 +29,20 @@ public class ExArrowOrb : MonoBehaviour
             itemScreen.Appear();
             StartCoroutine(Decision(playerUp));
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+            eIndicator.SetActive(true);
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if(player != null)
+            eIndicator.SetActive(false);
     }
 
     IEnumerator Decision(Upgrades playerUp)
