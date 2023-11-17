@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExArrowOrb : MonoBehaviour
+public class PoiArrowOrb : MonoBehaviour
 {
     public Sprite icon;
     PickUpScreen itemScreen;
@@ -13,8 +13,8 @@ public class ExArrowOrb : MonoBehaviour
     {
         itemScreen = GameObject.FindWithTag("Canvas").GetComponent<PickUpScreen>();
         eIndicator = transform.GetChild(0).GetChild(0).gameObject;
-        name = "Explosive Arrow";
-        desc = "Arrows deal AOE damage";
+        name = "Poison Arrow";
+        desc = "Arrows deal poison damage over time";
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class ExArrowOrb : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        if(player != null)
+        if (player != null)
             eIndicator.SetActive(false);
     }
 
@@ -57,9 +57,9 @@ public class ExArrowOrb : MonoBehaviour
         //if the yes button is pressed
         if (itemScreen.collected == 1)
         {
-            if (!playerUp.expArrow)
+            if (!playerUp.poiArrow)
             {
-                playerUp.setExpArrow(icon);
+                playerUp.setPoiArrow(icon);
             }
             Destroy(gameObject);
         }

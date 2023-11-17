@@ -59,7 +59,7 @@ public class MultishotOrb : MonoBehaviour
         {
             if (!playerUp.multiShot)
             {
-                playerUp.setMultiShot(true, icon);
+                playerUp.setMultiShot(icon);
             }
             Destroy(gameObject);
         }

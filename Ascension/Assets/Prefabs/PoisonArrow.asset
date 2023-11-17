@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c29e438f5813f1f4cb25baaa3be31db8, type: 3}
-  m_Name: ExplosiveArrowOrb
+  m_Name: PoisonArrow
   m_EditorClassIdentifier: 
-  lootName: ExplosiveArrowOrb
-  dropChance: 3
-  lootPrefab: {fileID: 1676223862822982317, guid: 586c0fee6644c1b4f8dc462b8c3a4086, type: 3}
+  lootName: PoisonArrowOrb
+  dropChance: 5
+  lootPrefab: {fileID: 1085797081491103722, guid: 358b52412e7db2c498ed35896d1e7d2d, type: 3}
   isUpgrade: 1

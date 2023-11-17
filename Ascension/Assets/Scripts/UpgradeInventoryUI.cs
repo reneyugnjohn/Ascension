@@ -9,7 +9,7 @@ public class UpgradeInventoryUI : MonoBehaviour
     Upgrades upg;
     private GameObject icon1;
     private GameObject icon2;
-    private GameObject icon3;
+   // private GameObject icon3;
     private bool hasIcon2;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class UpgradeInventoryUI : MonoBehaviour
         upg = player.GetComponent<Upgrades>();
         icon1 = transform.GetChild(0).gameObject;
         icon2 = transform.GetChild(1).gameObject;
-        icon3 = transform.GetChild(2).gameObject;
+       // icon3 = transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame
@@ -28,12 +28,12 @@ public class UpgradeInventoryUI : MonoBehaviour
 
     public void UpdateIcons(Sprite icon)
     {
-        if (!hasIcon2)
-        {
+      //  if (!hasIcon2)
+       // {
             UpdateIcon2(icon);
-        }
-        else
-            UpdateIcon3(icon);
+       // }
+      //  else
+       //     UpdateIcon3(icon);
     }
 
     
@@ -49,10 +49,10 @@ public class UpgradeInventoryUI : MonoBehaviour
         icon2.GetComponent<Image>().sprite = icon;
 
     }
-
+    /*
     public void UpdateIcon3(Sprite icon)
     {
         icon3.GetComponent<Image>().sprite = icon;
 
-    }
+    }*/
 }

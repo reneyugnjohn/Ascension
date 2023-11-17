@@ -6192,6 +6192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -15036,6 +15040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4803168749450077603, guid: 46d3158455685d649a40153c4d5946af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 46d3158455685d649a40153c4d5946af, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -15167,6 +15175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4803168749450077603, guid: 46d3158455685d649a40153c4d5946af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 46d3158455685d649a40153c4d5946af, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -15244,6 +15256,10 @@ PrefabInstance:
     - target: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_Name
       value: Skeleton (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_RootOrder
@@ -15642,6 +15658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiShot: 0
   expArrow: 0
+  poiArrow: 0
   InvUI: {fileID: 88782544}
 --- !u!1 &770973074 stripped
 GameObject:
@@ -15685,7 +15702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -120}
+  m_AnchoredPosition: {x: 180, y: -160}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779958671
@@ -20359,6 +20376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regArrow: {fileID: 9016940387383427446, guid: e1237a91c75397c459b85948a0ae80e4, type: 3}
   expArrow: {fileID: 4555408648333553585, guid: 2a34f1ed5aa2aa243b554524b03ed807, type: 3}
+  poiArrow: {fileID: 911438791186959392, guid: 4df67a2e1bbfde24fb5fdd8168deb51c, type: 3}
   bulletTransform: {fileID: 2132618715}
   canFire: 1
   timeBetweenFiring: 1
@@ -20860,7 +20878,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 198880739538691153, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 746790906187731609, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
       propertyPath: m_RootOrder
@@ -20912,7 +20930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1580384167797308759, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6817304095729896512, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
       propertyPath: transition
@@ -22016,7 +22034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1280802206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22220,17 +22238,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_RootOrder
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.76
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.23
+      value: -3.76
       objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22878,6 +22900,10 @@ PrefabInstance:
     - target: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_Name
       value: Skeleton (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
       propertyPath: m_RootOrder
@@ -29367,6 +29393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3496661103413193697, guid: 61e225bc79735f04d8775a399bbe5236, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3639679019403183900, guid: 61e225bc79735f04d8775a399bbe5236, type: 3}
       propertyPath: lootList.Array.size
       value: 3
@@ -33584,7 +33614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184, y: -120}
+  m_AnchoredPosition: {x: -184, y: -160}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932377258
@@ -33905,15 +33935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You found Explosive arrow!
-
-
-
-
-    Arrow deals AOE damage on hit
-
-    Do
-    you want to pick it up?'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75782a86fe498244981678f88d728df5, type: 2}
   m_sharedMaterial: {fileID: -8840799408594274718, guid: 75782a86fe498244981678f88d728df5, type: 2}
@@ -34539,6 +34561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 3496661103413193697, guid: 61e225bc79735f04d8775a399bbe5236, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5597901817857213109, guid: 61e225bc79735f04d8775a399bbe5236, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -34611,6 +34637,10 @@ PrefabInstance:
     - target: {fileID: 4803168749450077603, guid: 46d3158455685d649a40153c4d5946af, type: 3}
       propertyPath: m_Name
       value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803168749450077603, guid: 46d3158455685d649a40153c4d5946af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5887356376863925048, guid: 46d3158455685d649a40153c4d5946af, type: 3}
       propertyPath: m_RootOrder
@@ -34750,6 +34780,18 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 767091491}
+    - target: {fileID: 2204746760965122749, guid: 450ec92e2b70acb43bc7bd1614537725, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204746760965122749, guid: 450ec92e2b70acb43bc7bd1614537725, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204746760965122749, guid: 450ec92e2b70acb43bc7bd1614537725, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2843221231963570901, guid: 450ec92e2b70acb43bc7bd1614537725, type: 3}
       propertyPath: m_Name
       value: AxeMan
