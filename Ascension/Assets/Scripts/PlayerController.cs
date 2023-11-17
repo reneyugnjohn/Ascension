@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.U2D;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,13 +15,18 @@ public class PlayerController : MonoBehaviour
     public int health { get { return currentHealth; } }
     public int currentHealth;
     bool isInvincible;
+    bool isSprinting;
     float invincibleTimer;
     public float hurtDelay = 1.0f;
 
-    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float moveSpeed;
     private Vector2 moveDirection;
     float moveX;
     float moveY;
+    float walkSpeed = 4f;
+    float runSpeed = 6f;
+    float stamina = 100f;
+    float maxStamina = 100f;
     public bool rolling;
     public bool invRolling;
 
@@ -29,6 +35,8 @@ public class PlayerController : MonoBehaviour
     public GameObject bow;
 
     public ParticleSystem dust;
+
+    public Slider staminaBar;
 
     private CameraController camController;
     private changeLight lightScript;
@@ -43,6 +51,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         lightScript = GameObject.FindGameObjectWithTag("light").GetComponent<changeLight>();
+        moveSpeed = walkSpeed;
     }
 
     // Update is called once per frame
@@ -76,11 +85,45 @@ public class PlayerController : MonoBehaviour
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
         
-        if (Input.GetKeyDown(KeyCode.Space) && (Mathf.Abs(moveX) > 0f || Mathf.Abs(moveY) > 0f))
+        if (Input.GetKeyDown(KeyCode.Space) && (Mathf.Abs(moveX) > 0f || Mathf.Abs(moveY) > 0f) && stamina >= 25)
         {
             rolling = true;
             invRolling = true;
+            stamina -= 25f;
         }
+
+        if (Input.GetKey(KeyCode.LeftShift) && (Mathf.Abs(moveX) > 0f || Mathf.Abs(moveY) > 0f))
+        {
+            if (stamina > 0)
+            {
+                stamina -= 20f * Time.deltaTime;
+                createDust();
+                if (moveSpeed != runSpeed)
+                {
+                    moveSpeed = runSpeed;
+                    isSprinting = true;
+                }
+            }
+            else
+            {
+                moveSpeed = walkSpeed;
+                isSprinting = false;
+            }
+        }
+        else
+        {
+            isSprinting = false;
+
+            if (stamina <= maxStamina)
+            {
+                stamina += 10f * Time.deltaTime;
+                if (moveSpeed != walkSpeed)
+                {
+                    moveSpeed = walkSpeed;
+                }
+            }
+        }
+        staminaBar.value = stamina;
 
         moveDirection = new Vector2(moveX, moveY).normalized;
     }
@@ -121,18 +164,32 @@ public class PlayerController : MonoBehaviour
 
         if (Mathf.Abs(moveX) > 0f)
         {
-            
             anim.SetFloat("Speed", Mathf.Abs(moveX));
-            
+
+            if (isSprinting)
+            {
+                anim.SetBool("Sprinting", true);
+            }
+            else
+            {
+                anim.SetBool("Sprinting", false);
+            }
         }
         else if (Mathf.Abs(moveY) > 0f)
         {
-            
             anim.SetFloat("Speed", Mathf.Abs(moveY));
+
+            if (isSprinting)
+            {
+                anim.SetBool("Sprinting", true);
+            }
+            else
+            {
+                anim.SetBool("Sprinting", false);
+            }
         }
         else
         {
-            
             anim.SetFloat("Speed", 0f);
         }
 
