@@ -8,13 +8,18 @@ public class AudioManager : MonoBehaviour
     
     public AudioSource musicSource;
 
+    float savedVolume;
+
     public void Awake()
     {
         Instance = this;
+        savedVolume = PlayerPrefs.GetFloat("volume", 1.0f);
     }
 
     public void BackgroundMusic(float volume)
     {
         musicSource.volume = volume;
+        PlayerPrefs.SetFloat("volume", musicSource.volume);
+        PlayerPrefs.Save();
     }
 }
