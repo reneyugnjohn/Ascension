@@ -7,6 +7,7 @@ public class Upgrades : MonoBehaviour
     public bool multiShot = false;
     public bool expArrow = false;
     public bool poiArrow = false;
+    public bool froArrow = false;
     [SerializeField] UpgradeInventoryUI InvUI;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class Upgrades : MonoBehaviour
     public void setExpArrow(Sprite icon)
     {
         poiArrow = false;
+        froArrow = false;
         expArrow = true;
         InvUI.UpdateIcon1(icon);
     }
@@ -36,7 +38,16 @@ public class Upgrades : MonoBehaviour
     public void setPoiArrow(Sprite icon)
     {
         expArrow = false;
+        froArrow = false;
         poiArrow = true;
+        InvUI.UpdateIcon1(icon);
+    }
+
+    public void setFroArrow(Sprite icon)
+    {
+        poiArrow = false;
+        expArrow = false;
+        froArrow = true;
         InvUI.UpdateIcon1(icon);
     }
 }

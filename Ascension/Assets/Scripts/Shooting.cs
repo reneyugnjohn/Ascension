@@ -12,6 +12,7 @@ public class Shooting : MonoBehaviour
     public GameObject regArrow;
     public GameObject expArrow;
     public GameObject poiArrow;
+    public GameObject froArrow;
 
     public Transform bulletTransform;
     public bool canFire;
@@ -52,6 +53,11 @@ public class Shooting : MonoBehaviour
         if(upg.poiArrow)
         {
             chosenArrow = poiArrow;
+        }
+
+        if(upg.froArrow)
+        {
+            chosenArrow = froArrow;
         }
 
         if(!canFire)

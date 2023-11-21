@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootName: temp
   dropChance: 100
-  lootPrefab: {fileID: 7332163270543997993, guid: d773c92154a62014090386493a79bdfa, type: 3}
+  lootPrefab: {fileID: 1085797081491103722, guid: 358b52412e7db2c498ed35896d1e7d2d, type: 3}
   isUpgrade: 1

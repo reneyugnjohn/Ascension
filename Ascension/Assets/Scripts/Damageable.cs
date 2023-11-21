@@ -9,6 +9,7 @@ public class Damageable : MonoBehaviour
     public float currentHealth;
     EnemyHealthbar healthbar;
     bool poisoned;
+    bool icy;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +54,34 @@ public class Damageable : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         rend.color = Color.white;
 
-
         poisoned = false;
     }
+
+    public void setFrost()
+    {
+        if (!icy)
+        {
+            icy = true;
+            StartCoroutine(Frosted());
+        }
+    }
+
+    IEnumerator Frosted()
+    {
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        Pathfinding.AIBase ai = GetComponent<Pathfinding.AIBase>();
+        Animator anim = GetComponent<Animator>();
+        rend.color = Color.cyan;
+        float ogSpeed = ai.maxSpeed;
+        ai.maxSpeed /= 2;
+        anim.speed = 0.5f;
+
+        yield return new WaitForSeconds(3f);
+
+        rend.color = Color.white;
+        ai.maxSpeed = ogSpeed;
+        anim.speed = 1f;
+        icy = false;
+    }
+
 }

@@ -15972,6 +15972,7 @@ MonoBehaviour:
   multiShot: 0
   expArrow: 0
   poiArrow: 0
+  froArrow: 0
   InvUI: {fileID: 88782544}
 --- !u!1 &770973074 stripped
 GameObject:
@@ -20793,6 +20794,7 @@ MonoBehaviour:
   regArrow: {fileID: 9016940387383427446, guid: e1237a91c75397c459b85948a0ae80e4, type: 3}
   expArrow: {fileID: 4555408648333553585, guid: 2a34f1ed5aa2aa243b554524b03ed807, type: 3}
   poiArrow: {fileID: 911438791186959392, guid: 4df67a2e1bbfde24fb5fdd8168deb51c, type: 3}
+  froArrow: {fileID: 2560271563887747636, guid: f0109ab35dfa3b84d8d70968561118dd, type: 3}
   bulletTransform: {fileID: 2132618715}
   canFire: 1
   timeBetweenFiring: 1
