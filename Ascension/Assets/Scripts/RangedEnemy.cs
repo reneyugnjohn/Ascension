@@ -13,6 +13,7 @@ public class RangedEnemy : MonoBehaviour
     Vector3 direction;
 
     public bool canFire;
+    public bool animFire;
     private float timer;
     public float timeBetweenFiring = 5f;
     public float atkRange;
@@ -40,6 +41,7 @@ public class RangedEnemy : MonoBehaviour
         {
             timer = 0;
             canFire = false;
+            animFire = true;
             Fire();
         }
         else
@@ -92,6 +94,12 @@ public class RangedEnemy : MonoBehaviour
         else
         {
             anim.SetFloat("Speed", 0f);
+        }
+
+        if (animFire)
+        {
+            anim.SetTrigger("Attack");
+            animFire = false;
         }
     }
 }

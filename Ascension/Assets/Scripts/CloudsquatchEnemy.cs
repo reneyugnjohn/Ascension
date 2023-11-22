@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.Rendering.Universal;
 
-public class BasicEnemy : MonoBehaviour
+public class CloudsquatchEnemy : MonoBehaviour
 {
     Transform playerT;
     private Animator anim;
     private SpriteRenderer sprite;
+    [SerializeField] GameObject minisquatch;
 
     private Rigidbody2D rb;
     Vector3 direction;
@@ -35,10 +36,11 @@ public class BasicEnemy : MonoBehaviour
         direction = playerT.position - transform.position;
         direction.Normalize();
 
-        if(dmg.currentHealth <= 0)
+        if (dmg.currentHealth <= 0)
         {
             Destroy(gameObject);
             GetComponent<LootBag>().InstantiateLoot(transform.position);
+            Spawn();
         }
     }
 
@@ -55,6 +57,12 @@ public class BasicEnemy : MonoBehaviour
             player.ChangeHealth(-1);
             attack = true;
         }
+    }
+
+    void Spawn()
+    {
+        Instantiate(minisquatch, transform.position, Quaternion.identity);
+        Instantiate(minisquatch, transform.position, Quaternion.identity);
     }
 
     void UpdateAnimation()
