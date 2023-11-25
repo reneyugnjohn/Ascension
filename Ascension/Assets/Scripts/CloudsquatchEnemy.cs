@@ -9,6 +9,7 @@ public class CloudsquatchEnemy : MonoBehaviour
     Transform playerT;
     private Animator anim;
     private SpriteRenderer sprite;
+    public ParticleSystem dust;
     [SerializeField] GameObject minisquatch;
 
     private Rigidbody2D rb;
@@ -72,28 +73,21 @@ public class CloudsquatchEnemy : MonoBehaviour
             if (aipath.velocity != Vector3.zero)
             {
                 anim.SetBool("Sprinting", true);
+                createDust();
             }
             else
             {
                 anim.SetBool("Sprinting", false);
             }
             //anim.SetFloat("Speed", Mathf.Abs(aipath.velocity));
-            if (direction.x < 0f)
+            if (direction.x < 0f && aipath.velocity == Vector3.zero)
             {
                 sprite.flipX = true;
             }
-            else
+            else if (direction.x >= 0f && aipath.velocity == Vector3.zero)
             {
                 sprite.flipX = false;
             }
-        }
-        else if (Mathf.Abs(direction.y) > 0f)
-        {
-            anim.SetFloat("Speed", Mathf.Abs(direction.y));
-        }
-        else
-        {
-            anim.SetFloat("Speed", 0f);
         }
 
         if (attack)
@@ -101,5 +95,10 @@ public class CloudsquatchEnemy : MonoBehaviour
             anim.SetTrigger("Attack");
             attack = false;
         }
+    }
+
+    void createDust()
+    {
+        dust.Play();
     }
 }

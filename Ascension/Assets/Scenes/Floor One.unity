@@ -29852,134 +29852,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e225bc79735f04d8775a399bbe5236, type: 3}
---- !u!1001 &1603664483
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2295105952617561357, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d12be97da22a28743aece02e2f7b93c1, type: 2}
-    - target: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Name
-      value: Cloudsquatch
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -63.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887356376863925048, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113231546003758418, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2104874
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113231546003758418, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4167895
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113231546003758418, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.22637177
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113231546003758418, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.03982687
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113231546003758418, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.6666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113231546003758418, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6273585950121637522, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6273585950121637522, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: currentHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7218822592739610463, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 651820773, guid: 559b98b161b8b74458ad346794f4f782, type: 3}
-    - target: {fileID: 7400465577612121787, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7442119719177085807, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7442119719177085807, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7517741589012084095, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: maxSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7517741589012084095, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: autoRepath.mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7517741589012084095, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      propertyPath: autoRepath.interval
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 7636446274455248182}
-  m_SourcePrefab: {fileID: 100100000, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
 --- !u!1 &1613224020
 GameObject:
   m_ObjectHideFlags: 0
@@ -34895,11 +34767,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450ec92e2b70acb43bc7bd1614537725, type: 3}
---- !u!1 &4803168750950899648 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4803168749450077603, guid: 03cf1edbc810fbf40845de15e71b5201, type: 3}
-  m_PrefabInstance: {fileID: 1603664483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5140211633599665951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5597901817857213109, guid: 61e225bc79735f04d8775a399bbe5236, type: 3}
@@ -35093,19 +34960,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece90689e1e1e164eb4b9af2720086be, type: 3}
---- !u!114 &7636446274455248182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4803168750950899648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 852c3ffe3c518084e9eeb3650c6aaa9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minisquatch: {fileID: 3275944213894841351, guid: fdde6791acac50f4188741487e4bf59c, type: 3}
 --- !u!1001 &7649548098202172049
 PrefabInstance:
   m_ObjectHideFlags: 0
