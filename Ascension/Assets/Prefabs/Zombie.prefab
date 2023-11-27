@@ -448,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eb9f7c155d41e4baa6445c6529223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
 --- !u!95 &5194314796819383870
 Animator:
   serializedVersion: 5
@@ -488,6 +487,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1f3e8f515d724a4e837dcddb2559998, type: 2}
   - {fileID: 11400000, guid: a8b6c721e62b83745be29070d1696729, type: 2}
   - {fileID: 11400000, guid: 6a4f6f71487f7604184204377053a8a1, type: 2}
+  - {fileID: 11400000, guid: e3b13eeb94844d94d840045967ae3925, type: 2}
   dropForce: 50
 --- !u!114 &2669078708738341643
 MonoBehaviour:

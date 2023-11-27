@@ -5,6 +5,7 @@ using UnityEngine;
 public class Upgrades : MonoBehaviour
 {
     public bool multiShot = false;
+    public bool pierceShot = false;
     public bool expArrow = false;
     public bool poiArrow = false;
     public bool froArrow = false;
@@ -21,9 +22,17 @@ public class Upgrades : MonoBehaviour
         
     }
 
+    public void setPierceShot(Sprite icon)
+    {
+        pierceShot = true;
+        multiShot = false;
+        InvUI.UpdateIcons(icon);
+    }
+
     public void setMultiShot(Sprite icon)
     {
         multiShot = true;
+        pierceShot = false;
         InvUI.UpdateIcons(icon);
     }
 

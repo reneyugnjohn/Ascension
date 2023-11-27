@@ -9,6 +9,9 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
     public float knockbackForce = 5f;
+    GameObject player;
+    Upgrades upg;
+    int pierceCount;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,13 @@ public class Projectile : MonoBehaviour
         rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 180);
+
+        player = GameObject.FindWithTag("Player");
+        upg = player.GetComponent<Upgrades>();
+        if (upg.pierceShot)
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+        }
     }
 
     // Update is called once per frame
@@ -37,5 +47,24 @@ public class Projectile : MonoBehaviour
             enemy.ChangeHealth(-1);
         }
         Destroy(gameObject);
+    }
+
+    // For pierce upgrade
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Damageable enemy = other.gameObject.GetComponent<Damageable>();
+        // if hit is enemy
+        if (enemy != null)
+        {
+            enemy.ChangeHealth(-1);
+            if (pierceCount == 0)
+                pierceCount++;
+            else
+                Destroy(gameObject);
+        }
+        // if not enemy
+        else
+            Destroy(gameObject);
+            
     }
 }

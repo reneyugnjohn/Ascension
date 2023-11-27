@@ -38,7 +38,16 @@ public class BonePile : MonoBehaviour
         }
     }
 
-    IEnumerator Shake()
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "PlayerProjectile")
+        {
+            currentHealth--;
+            StartCoroutine(Shake());
+        }
+    }
+
+        IEnumerator Shake()
     {
         float currTime = 0f;
         while (currTime < .1)

@@ -293,6 +293,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1f3e8f515d724a4e837dcddb2559998, type: 2}
   - {fileID: 11400000, guid: a8b6c721e62b83745be29070d1696729, type: 2}
   - {fileID: 11400000, guid: 6a4f6f71487f7604184204377053a8a1, type: 2}
+  - {fileID: 11400000, guid: e3b13eeb94844d94d840045967ae3925, type: 2}
   dropForce: 50
 --- !u!114 &7309686501620725943
 MonoBehaviour:
@@ -306,11 +307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dc493e11435734c93d59c4b2382523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   shotPoint: {fileID: 5923796787708692411}
   gun: {fileID: 8966926723457685982}
   bullet: {fileID: 4660809038005940658, guid: df961226713537b4ea211f5f8c12282c, type: 3}
   canFire: 0
+  animFire: 0
   timeBetweenFiring: 3
   atkRange: 5
 --- !u!114 &-9194737597051215678

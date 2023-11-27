@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
-    public Transform player;
+    Transform playerT;
     public Transform shotPoint;
     public Transform gun;
     public GameObject bullet;
@@ -21,6 +21,7 @@ public class RangedEnemy : MonoBehaviour
 
     void Start()
     {
+        playerT = GameObject.FindWithTag("Player").transform;
         dmg = GetComponent<Damageable>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -28,16 +29,16 @@ public class RangedEnemy : MonoBehaviour
 
     void Update()
     {
-        Vector3 difference = player.position - gun.transform.position;
+        Vector3 difference = playerT.position - gun.transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         gun.transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-        direction = player.position - transform.position;
+        direction = playerT.position - transform.position;
         direction.Normalize();
         UpdateAnimation();
 
         //If enemy is ready to fire and player is in range
-        if (canFire && Vector2.Distance(transform.position, player.position) <= atkRange)
+        if (canFire && Vector2.Distance(transform.position, playerT.position) <= atkRange)
         {
             timer = 0;
             canFire = false;
