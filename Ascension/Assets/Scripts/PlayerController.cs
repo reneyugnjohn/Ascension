@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
+    public AudioClip audioClip;
+    private AudioSource audioSource;
 
     public int maxHealth = 5;
     public int health { get { return currentHealth; } }
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        //audioSource.clip = audioClip;
         currentHealth = maxHealth;
         camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         lightScript = GameObject.FindGameObjectWithTag("light").GetComponent<changeLight>();
@@ -221,6 +224,8 @@ public class PlayerController : MonoBehaviour
 
             camController.StartCameraShake();
             lightScript.ChangeToRed();
+            //audioSource.Play();
+            
         }
         
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);

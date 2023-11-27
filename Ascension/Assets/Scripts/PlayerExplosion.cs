@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerExplosion : MonoBehaviour
-{
+{ 
     private void Start()
     {
         StartCoroutine(ExplosionDelay());
