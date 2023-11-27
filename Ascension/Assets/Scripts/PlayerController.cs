@@ -10,8 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
-    public AudioClip audioClip;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     public int maxHealth = 5;
     public int health { get { return currentHealth; } }
@@ -224,7 +223,7 @@ public class PlayerController : MonoBehaviour
 
             camController.StartCameraShake();
             lightScript.ChangeToRed();
-            //audioSource.Play();
+            audioSource.Play();
             
         }
         

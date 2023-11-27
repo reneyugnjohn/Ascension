@@ -40,7 +40,10 @@ public class Sign : MonoBehaviour
     {
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
         if (player != null)
+        {
             eIndicator.SetActive(false);
+            signMessage.SetActive(false);
+        }
     }
 
     public void exitButton()

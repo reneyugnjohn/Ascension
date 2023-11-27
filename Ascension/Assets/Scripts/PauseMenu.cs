@@ -23,10 +23,10 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = isPaused ? 1 : 0;
             canvas.SetActive(!isPaused);
             GameObject warningPanel = canvas.transform.Find("Warning Panel").gameObject;
-            GameObject optionsPanel = canvas.transform.Find("Options Panel").gameObject;
+            GameObject settingsPanel = canvas.transform.Find("Settings Panel").gameObject;
 
             warningPanel.SetActive(false);
-            optionsPanel.SetActive(false);
+            settingsPanel.SetActive(false);
         }
     }
 

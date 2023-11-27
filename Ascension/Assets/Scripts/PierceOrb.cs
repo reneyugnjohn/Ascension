@@ -14,7 +14,7 @@ public class PierceOrb : MonoBehaviour
         itemScreen = GameObject.FindWithTag("Canvas").GetComponent<PickUpScreen>();
         eIndicator = transform.GetChild(0).GetChild(0).gameObject;
         UpgName = "Piercing shot";
-        desc = "Arrows continue through the first enemy hit";
+        desc = "Arrows \"pierce\" through the first enemy hit";
     }
 
     // Update is called once per frame

@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
     private PlayerController player;
     private Camera mainCam;
     private Vector3 mousePos;
+    public AudioSource audioSource;
 
     private GameObject chosenArrow;
     public GameObject regArrow;
@@ -81,6 +82,7 @@ public class Shooting : MonoBehaviour
             else
             {
                 Instantiate(chosenArrow, bulletTransform.position, Quaternion.identity);
+                audioSource.Play();
                 //camController.StartCameraShake();
             }
         }
@@ -90,7 +92,9 @@ public class Shooting : MonoBehaviour
     IEnumerator DoubleFire()
     {
         Instantiate(chosenArrow, bulletTransform.position, Quaternion.identity);
+        audioSource.Play();
         yield return new WaitForSeconds(0.1f);
         Instantiate(chosenArrow, bulletTransform.position, Quaternion.identity);
+        audioSource.Play();
     }
 }
