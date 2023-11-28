@@ -10,6 +10,7 @@ public class RangedEnemy : MonoBehaviour
     public GameObject bullet;
     private SpriteRenderer sprite;
     private Animator anim;
+    private Pathfinding.AIBase aipath;
     Vector3 direction;
 
     public bool canFire;
@@ -17,6 +18,7 @@ public class RangedEnemy : MonoBehaviour
     private float timer;
     public float timeBetweenFiring = 5f;
     public float atkRange;
+    public int detectRange;
     Damageable dmg;
 
     void Start()
@@ -25,6 +27,7 @@ public class RangedEnemy : MonoBehaviour
         dmg = GetComponent<Damageable>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        aipath = GetComponent<Pathfinding.AIBase>();
     }
 
     void Update()
@@ -54,6 +57,11 @@ public class RangedEnemy : MonoBehaviour
             } 
         }
 
+        if (Vector2.Distance(transform.position, playerT.position) <= detectRange)
+        {
+            aipath.canMove = true;
+        }
+
         if (dmg.currentHealth <= 0)
         {
             Destroy(gameObject);
@@ -68,12 +76,13 @@ public class RangedEnemy : MonoBehaviour
     }
 
     //Draws a circle to help see what his range is
+    /*
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, atkRange);
     }
-
+    */
     void UpdateAnimation()
     {
         if (Mathf.Abs(direction.x) > 0f)

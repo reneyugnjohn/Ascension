@@ -20,16 +20,17 @@ public class PlayerController : MonoBehaviour
     float invincibleTimer;
     public float hurtDelay = 1.0f;
 
-    [SerializeField] private float moveSpeed;
+    public float moveSpeed;
     private Vector2 moveDirection;
     float moveX;
     float moveY;
-    float walkSpeed = 4f;
-    float runSpeed = 6f;
+    public float walkSpeed = 4f;
+    public float runSpeed = 6f;
     float stamina = 100f;
     float maxStamina = 100f;
     public bool rolling;
     public bool invRolling;
+    public bool slowed;
 
     public GameOverScreen gameOver;
 
@@ -103,12 +104,16 @@ public class PlayerController : MonoBehaviour
                 if (moveSpeed != runSpeed)
                 {
                     moveSpeed = runSpeed;
+                    if (slowed)
+                        moveSpeed /= 2;
                     isSprinting = true;
                 }
             }
             else
             {
                 moveSpeed = walkSpeed;
+                if(slowed)
+                    moveSpeed /= 2;
                 isSprinting = false;
             }
         }
@@ -122,6 +127,8 @@ public class PlayerController : MonoBehaviour
                 if (moveSpeed != walkSpeed)
                 {
                     moveSpeed = walkSpeed;
+                    if(slowed)
+                        moveSpeed /= 2;
                 }
             }
         }

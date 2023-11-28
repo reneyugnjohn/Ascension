@@ -314,6 +314,7 @@ MonoBehaviour:
   animFire: 0
   timeBetweenFiring: 3
   atkRange: 5
+  detectRange: 7
 --- !u!114 &-9194737597051215678
 MonoBehaviour:
   m_ObjectHideFlags: 0

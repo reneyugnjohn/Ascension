@@ -9,6 +9,11 @@ public class CameraController : MonoBehaviour
     [SerializeField] private cameraShake cameraShakeScript;
     [SerializeField] private float magnitude, duration;
 
+    void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     private void Update()
     {
         transform.position = new Vector3(player.position.x, player.position.y, -10);

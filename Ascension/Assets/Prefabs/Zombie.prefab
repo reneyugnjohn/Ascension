@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eb9f7c155d41e4baa6445c6529223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectRange: 5
 --- !u!95 &5194314796819383870
 Animator:
   serializedVersion: 5
@@ -546,7 +547,7 @@ MonoBehaviour:
   version: 5
   radius: 0.1
   height: 2
-  canMove: 1
+  canMove: 0
   maxSpeed: 2
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:

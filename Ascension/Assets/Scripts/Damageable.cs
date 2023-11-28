@@ -10,12 +10,15 @@ public class Damageable : MonoBehaviour
     EnemyHealthbar healthbar;
     bool poisoned;
     bool icy;
+
+    Pathfinding.AIBase ai;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthbar = GetComponentInChildren<EnemyHealthbar>();
         healthbar.UpdateHealthbar(health, maxHealth);
+        ai = GetComponent<Pathfinding.AIBase>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class Damageable : MonoBehaviour
 
     public void ChangeHealth(float amt)
     {
+        ai.canMove = true;
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
         healthbar.UpdateHealthbar(currentHealth, maxHealth);
     }
@@ -69,7 +73,6 @@ public class Damageable : MonoBehaviour
     IEnumerator Frosted()
     {
         SpriteRenderer rend = GetComponent<SpriteRenderer>();
-        Pathfinding.AIBase ai = GetComponent<Pathfinding.AIBase>();
         Animator anim = GetComponent<Animator>();
         rend.color = Color.cyan;
         float ogSpeed = ai.maxSpeed;

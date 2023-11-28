@@ -15,6 +15,7 @@ public class BasicEnemy : MonoBehaviour
     bool attack;
     Damageable dmg;
     private Pathfinding.AIBase aipath;
+    [SerializeField] int detectRange;
 
 
     // Start is called before the first frame update
@@ -40,8 +41,19 @@ public class BasicEnemy : MonoBehaviour
             Destroy(gameObject);
             GetComponent<LootBag>().InstantiateLoot(transform.position);
         }
-    }
 
+        if(Vector2.Distance(transform.position, playerT.position) <= detectRange)
+        {
+            aipath.canMove = true;
+        }
+    }
+    /*
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, detectRange);
+    }
+    */
     private void FixedUpdate()
     {
         UpdateAnimation();

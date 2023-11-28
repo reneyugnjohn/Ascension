@@ -26,6 +26,7 @@ public class Sign : MonoBehaviour
         if (player != null && Input.GetKeyDown(KeyCode.E))
         {
             signMessage.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -48,6 +49,7 @@ public class Sign : MonoBehaviour
 
     public void exitButton()
     {
+        Time.timeScale = 1;
         signMessage.SetActive(false);
     }
 }
