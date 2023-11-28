@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
             createDust();
             rb.AddForce(moveDirection * 25f, ForceMode2D.Force);
         }
-        else
+        else if (!anim.GetBool("Falling"))
         {
             rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
 
@@ -154,6 +154,10 @@ public class PlayerController : MonoBehaviour
             {
                 createDust();
             }*/
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 

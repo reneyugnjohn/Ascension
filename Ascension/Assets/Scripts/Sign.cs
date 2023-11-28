@@ -6,10 +6,11 @@ public class Sign : MonoBehaviour
 {
     GameObject signMessage;
     GameObject eIndicator;
+    [SerializeField] int screenNum;
     // Start is called before the first frame update
     void Start()
     {
-        signMessage = GameObject.FindWithTag("Canvas").transform.GetChild(4).gameObject;
+        signMessage = GameObject.FindWithTag("Canvas").transform.GetChild(screenNum).gameObject;
         eIndicator = transform.GetChild(0).GetChild(0).gameObject;
     }
 
@@ -49,7 +50,7 @@ public class Sign : MonoBehaviour
 
     public void exitButton()
     {
-        Time.timeScale = 1;
         signMessage.SetActive(false);
+        Time.timeScale = 1;
     }
 }

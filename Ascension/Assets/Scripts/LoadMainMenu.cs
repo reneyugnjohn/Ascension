@@ -11,7 +11,7 @@ public class LoadMainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        StartCoroutine(LoadLevel(0));
+        StartCoroutine(LoadLevel(1));
     }
 
     IEnumerator LoadLevel(int levelIndex)

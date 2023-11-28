@@ -87,7 +87,15 @@ public class RangedEnemy : MonoBehaviour
     {
         if (Mathf.Abs(direction.x) > 0f)
         {
-            anim.SetFloat("Speed", Mathf.Abs(direction.x));
+            if (aipath.velocity != Vector3.zero)
+            {
+                anim.SetBool("Sprinting", true);
+            }
+            else
+            {
+                anim.SetBool("Sprinting", false);
+            }
+
             if (direction.x > 0f)
             {
                 sprite.flipX = true;
@@ -96,14 +104,6 @@ public class RangedEnemy : MonoBehaviour
             {
                 sprite.flipX = false;
             }
-        }
-        else if (Mathf.Abs(direction.y) > 0f)
-        {
-            anim.SetFloat("Speed", Mathf.Abs(direction.y));
-        }
-        else
-        {
-            anim.SetFloat("Speed", 0f);
         }
 
         if (animFire)
