@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2474832185703746646}
   - component: {fileID: 5767448144243598899}
   - component: {fileID: 7561149622720016733}
-  - component: {fileID: 5446006579610997626}
+  - component: {fileID: 2563852219565415436}
   - component: {fileID: 4530771113613275602}
   - component: {fileID: 3077482811058120386}
   - component: {fileID: 4117575888406035684}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: -1475850309
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1392396982, guid: 26c28761fc302054da111d66a66fc46b, type: 3}
+  m_Sprite: {fileID: -431475741, guid: d723d6a1fdd01ee43a1a3e12932285f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6666667, y: 0.6666667}
+    oldSize: {x: 1.3333334, y: 1.3333334}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a4f6f71487f7604184204377053a8a1, type: 2}
   - {fileID: 11400000, guid: e3b13eeb94844d94d840045967ae3925, type: 2}
   dropForce: 50
---- !u!114 &5446006579610997626
+--- !u!114 &2563852219565415436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,17 +197,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1048741703596839842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a54118bcc89cec47a10bc9704d1647a, type: 3}
+  m_Script: {fileID: 11500000, guid: 88d10aeace22f7a4a9d43b467ba73321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotPoint: {fileID: 7477592390974296628}
   gun: {fileID: 6827746755602653796}
-  bullet: {fileID: 3294461309472865515, guid: 54e69946049347e47a76c93caa3d1835, type: 3}
-  canFire: 0
+  bullet: {fileID: 3638235615203957427, guid: e52bfd33f838d5d46a15ec647b4130fc, type: 3}
+  canFire: 1
   animFire: 0
   timeBetweenFiring: 2
   atkRange: 7
-  detectRange: 9
+  detectRange: 5
 --- !u!114 &4530771113613275602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d49457f37c98a40850a37a949fc75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
-  currentHealth: 2
+  maxHealth: 4
+  currentHealth: 4
 --- !u!114 &3077482811058120386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +316,7 @@ Animator:
   m_GameObject: {fileID: 1048741703596839842}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7e1326ebd0c8c8d428723668dd0a15ac, type: 2}
+  m_Controller: {fileID: 9100000, guid: bac2193dbe545fe4ab177c18d42e361c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

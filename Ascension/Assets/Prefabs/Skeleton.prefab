@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eb9f7c155d41e4baa6445c6529223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectRange: 5
+  detectRange: 7
 --- !u!95 &2295105952617561357
 Animator:
   serializedVersion: 5

@@ -97,11 +97,11 @@ public class LightningBirdEnemy : MonoBehaviour
 
             if (direction.x > 0f)
             {
-                sprite.flipX = true;
+                sprite.flipX = false;
             }
             else
             {
-                sprite.flipX = false;
+                sprite.flipX = true;
             }
         }
 

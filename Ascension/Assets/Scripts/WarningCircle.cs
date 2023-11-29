@@ -21,6 +21,6 @@ public class WarningCircle : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        Instantiate(field, transform.position, transform.rotation);
+        Instantiate(field, transform.position, Quaternion.identity);
     }
 }

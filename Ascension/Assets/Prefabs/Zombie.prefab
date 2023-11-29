@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eb9f7c155d41e4baa6445c6529223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectRange: 5
+  detectRange: 7
 --- !u!95 &5194314796819383870
 Animator:
   serializedVersion: 5
@@ -502,8 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d49457f37c98a40850a37a949fc75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 5
+  maxHealth: 4
+  currentHealth: 4
 --- !u!114 &2848271676583508933
 MonoBehaviour:
   m_ObjectHideFlags: 0

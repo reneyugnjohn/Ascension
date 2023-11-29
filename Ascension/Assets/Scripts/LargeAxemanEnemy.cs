@@ -50,12 +50,12 @@ public class LargeAxemanEnemy : MonoBehaviour
 
         if (Vector2.Distance(transform.position, playerT.position) <= attackRange)
         {
-            aipath.maxSpeed = 3;
+            aipath.maxSpeed = 4;
             attack = true;
         }
         else
         { 
-            aipath.maxSpeed = 1;
+            aipath.maxSpeed = 2;
             attack = false;
         }
     }
