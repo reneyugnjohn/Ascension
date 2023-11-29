@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 5;
     public int health { get { return currentHealth; } }
     public int currentHealth;
+    int savedHealth;
     bool isInvincible;
     bool isSprinting;
     float invincibleTimer;
@@ -51,10 +52,12 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         //audioSource.clip = audioClip;
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         lightScript = GameObject.FindGameObjectWithTag("light").GetComponent<changeLight>();
         moveSpeed = walkSpeed;
+        savedHealth = PlayerPrefs.GetInt("Health", 5);
+        currentHealth = savedHealth;
     }
 
     // Update is called once per frame

@@ -55,7 +55,7 @@ public class LargeAxemanEnemy : MonoBehaviour
         }
         else
         { 
-            aipath.maxSpeed = 2;
+            aipath.maxSpeed = 1;
             attack = false;
         }
     }

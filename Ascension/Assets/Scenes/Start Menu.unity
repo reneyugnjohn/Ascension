@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 211239547}
   - component: {fileID: 211239551}
   - component: {fileID: 211239552}
+  - component: {fileID: 211239553}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -721,6 +722,18 @@ MonoBehaviour:
   mainMenu: {fileID: 1173551635}
   optionsMenu: {fileID: 1195347504}
   delayTime: 1.25
+--- !u!114 &211239553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211239546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f844792c845a94e8d2e225b9743128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &327362773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,11 +3138,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033001896}
   m_CullTransparentMesh: 1
---- !u!95 &1070927724 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6130634954865001590, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
-  m_PrefabInstance: {fileID: 3160090672045102307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092142511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5814,6 +5822,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 211239553}
+        m_TargetAssemblyTypeName: ResetPlayerPrefs, Assembly-CSharp
+        m_MethodName: ResetPrefs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3160090672045102308}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
@@ -6450,10 +6470,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 198880739538691153, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 746790906187731609, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6502,22 +6518,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
-    - target: {fileID: 1580384167797308759, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1580384167797308759, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5952637543597379819, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6817304095729896512, guid: 8e34a2f15433cd04ba46bfa49d1f1b6a, type: 3}
-      propertyPath: transition
-      value: 
-      objectReference: {fileID: 1070927724}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

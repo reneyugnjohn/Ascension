@@ -16,6 +16,9 @@ public class GameOverScreen : MonoBehaviour
     public void RestartButton()
     {
         Time.timeScale = 1;
+        PlayerPrefs.DeleteKey("Health");
+        PlayerPrefs.DeleteKey("Arrow");
+        PlayerPrefs.DeleteKey("Ability");
         SceneManager.LoadScene(2);
     }
 }
