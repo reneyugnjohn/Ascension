@@ -7,17 +7,21 @@ public class Damageable : MonoBehaviour
     public float maxHealth;
     public float health { get { return currentHealth; } }
     public float currentHealth;
-    EnemyHealthbar healthbar;
+    public EnemyHealthbar healthbar;
     bool poisoned;
     bool icy;
+    public bool isBoss;
 
     Pathfinding.AIBase ai;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        healthbar = GetComponentInChildren<EnemyHealthbar>();
-        healthbar.UpdateHealthbar(health, maxHealth);
+        if (!isBoss)
+        {
+            healthbar = GetComponentInChildren<EnemyHealthbar>();
+            healthbar.UpdateHealthbar(health, maxHealth);
+        }
         ai = GetComponent<Pathfinding.AIBase>();
     }
 
