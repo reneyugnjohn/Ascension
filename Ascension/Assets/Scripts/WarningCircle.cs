@@ -5,7 +5,7 @@ using UnityEngine;
 public class WarningCircle : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject slowingField;
+    public GameObject field;
     void Start()
     {
         StartCoroutine(Lifetime());
@@ -19,8 +19,8 @@ public class WarningCircle : MonoBehaviour
 
     IEnumerator Lifetime()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        Instantiate(slowingField, transform.position, transform.rotation);
+        Instantiate(field, transform.position, transform.rotation);
     }
 }

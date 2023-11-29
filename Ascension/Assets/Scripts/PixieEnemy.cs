@@ -72,7 +72,6 @@ public class PixieEnemy : MonoBehaviour
     void Fire()
     {
         Instantiate(bullet, playerT.position, shotPoint.transform.rotation);
-
     }
 
     //Draws a circle to help see what his range is

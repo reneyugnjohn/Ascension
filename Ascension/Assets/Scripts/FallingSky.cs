@@ -21,7 +21,6 @@ public class FallingSky : MonoBehaviour
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
         if (player != null)
         {
-            Debug.Log("asdf");
             var anim = player.GetComponent<Animator>();
             anim.SetBool("Falling", true);
             StartCoroutine(Delay(player));

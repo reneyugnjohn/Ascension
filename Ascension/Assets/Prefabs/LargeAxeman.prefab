@@ -5417,6 +5417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d8606502d63604a86987aa305cacbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: 7
+  detectRange: 10
 --- !u!95 &2801628640814038144
 Animator:
   serializedVersion: 5
@@ -5514,8 +5516,8 @@ MonoBehaviour:
   version: 5
   radius: 0.1
   height: 2
-  canMove: 1
-  maxSpeed: 8
+  canMove: 0
+  maxSpeed: 2
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -5526,7 +5528,7 @@ MonoBehaviour:
   orientation: 1
   enableRotation: 0
   autoRepath:
-    mode: 1
+    mode: 2
     interval: 5
     sensitivity: 10
     maximumInterval: 2

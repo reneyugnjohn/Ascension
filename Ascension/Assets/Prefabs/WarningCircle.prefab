@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a60f6fb62240040ae28768ada3964e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowingField: {fileID: 4738715680020746711, guid: 68e92f8fcc0382f47a0d45d73cc19ce8, type: 3}
+  field: {fileID: 4738715680020746711, guid: 68e92f8fcc0382f47a0d45d73cc19ce8, type: 3}

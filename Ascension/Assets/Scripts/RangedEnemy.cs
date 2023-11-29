@@ -89,11 +89,11 @@ public class RangedEnemy : MonoBehaviour
         {
             if (aipath.velocity != Vector3.zero)
             {
-                anim.SetBool("Sprinting", true);
+             //   anim.SetBool("Sprinting", true);
             }
             else
             {
-                anim.SetBool("Sprinting", false);
+             //   anim.SetBool("Sprinting", false);
             }
 
             if (direction.x > 0f)

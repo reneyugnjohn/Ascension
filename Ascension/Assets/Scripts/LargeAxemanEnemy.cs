@@ -15,6 +15,8 @@ public class LargeAxemanEnemy : MonoBehaviour
     bool attack;
     Damageable dmg;
     private Pathfinding.AIBase aipath;
+    [SerializeField] int attackRange;
+    [SerializeField] int detectRange;
 
 
     // Start is called before the first frame update
@@ -40,6 +42,28 @@ public class LargeAxemanEnemy : MonoBehaviour
             Destroy(gameObject);
             GetComponent<LootBag>().InstantiateLoot(transform.position);
         }
+        
+        if (Vector2.Distance(transform.position, playerT.position) <= detectRange)
+        {
+            aipath.canMove = true;
+        }
+
+        if (Vector2.Distance(transform.position, playerT.position) <= attackRange)
+        {
+            aipath.maxSpeed = 3;
+            attack = true;
+        }
+        else
+        { 
+            aipath.maxSpeed = 1;
+            attack = false;
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
     private void FixedUpdate()
@@ -53,7 +77,7 @@ public class LargeAxemanEnemy : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
-            attack = true;
+           // attack = true;
         }
     }
 
@@ -63,27 +87,24 @@ public class LargeAxemanEnemy : MonoBehaviour
         {
             if (aipath.velocity != Vector3.zero)
             {
-                anim.SetBool("Sprinting", true);
+               // anim.SetBool("Sprinting", true);
             }
             else
             {
-                anim.SetBool("Sprinting", false);
+            //    anim.SetBool("Sprinting", false);
             }
             //anim.SetFloat("Speed", Mathf.Abs(aipath.velocity));
-            if (direction.x < 0f && aipath.velocity == Vector3.zero)
-            {
-                sprite.flipX = true;
-            }
-            else if (direction.x >= 0f && aipath.velocity == Vector3.zero)
+            if (direction.x < 0f)
             {
                 sprite.flipX = false;
             }
+            else if (direction.x >= 0f)
+            {
+                sprite.flipX = true;
+            }
         }
 
-        if (attack)
-        {
-            anim.SetTrigger("Attack");
-            attack = false;
-        }
+        anim.SetBool("Attack", attack);
+ 
     }
 }
