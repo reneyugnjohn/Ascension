@@ -268,7 +268,7 @@ MonoBehaviour:
   bullet: {fileID: 2949291716403249886, guid: eb83137b2b6351948bcfa8e3c79d7c91, type: 3}
   canFire: 0
   animFire: 0
-  timeBetweenFiring: 2
+  timeBetweenFiring: 1
   atkRange: 7
   detectRange: 9
 --- !u!114 &6302619183530246738
@@ -285,6 +285,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 4
   currentHealth: 4
+  healthbar: {fileID: 0}
+  isBoss: 0
 --- !u!114 &7503920864008618292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,6 +672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 563347674702061754}
+  isTower: 0
+  isBoss: 0
 --- !u!225 &7782762394335940257
 CanvasGroup:
   m_ObjectHideFlags: 0

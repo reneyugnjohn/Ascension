@@ -1,6 +1,8 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BonePile : MonoBehaviour
 {
@@ -10,10 +12,13 @@ public class BonePile : MonoBehaviour
     [SerializeField] GameObject skeleton;
     [SerializeField] GameObject healthPot;
     [SerializeField] GameObject multiShot;
+    [SerializeField] int detectRange;
+    Transform playerT;
     Vector2 startingPos;
     // Start is called before the first frame update
     void Start()
     {
+        playerT = GameObject.FindWithTag("Player").transform;
         currentHealth = maxHealth;
         startingPos.x = transform.position.x;
         startingPos.y = transform.position.y;
@@ -23,6 +28,12 @@ public class BonePile : MonoBehaviour
     void Update()
     {
         if (currentHealth <= 0)
+        {
+            Spawn();
+            Destroy(gameObject);
+        }
+
+        if (Vector2.Distance(transform.position, playerT.position) <= detectRange)
         {
             Spawn();
             Destroy(gameObject);

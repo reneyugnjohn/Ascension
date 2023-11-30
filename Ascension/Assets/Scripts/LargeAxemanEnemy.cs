@@ -9,6 +9,7 @@ public class LargeAxemanEnemy : MonoBehaviour
     Transform playerT;
     private Animator anim;
     private SpriteRenderer sprite;
+    public GameObject healthPot;
 
     private Rigidbody2D rb;
     Vector3 direction;
@@ -40,9 +41,12 @@ public class LargeAxemanEnemy : MonoBehaviour
         if (dmg.currentHealth <= 0)
         {
             Destroy(gameObject);
-            GetComponent<LootBag>().InstantiateLoot(transform.position);
+            //GetComponent<LootBag>().InstantiateLoot(transform.position);
+            Instantiate(healthPot, transform.position, Quaternion.identity);
+            Instantiate(healthPot, transform.position, Quaternion.identity);
+
         }
-        
+
         if (Vector2.Distance(transform.position, playerT.position) <= detectRange)
         {
             aipath.canMove = true;

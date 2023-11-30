@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite;
     public AudioSource audioSource;
 
-    public int maxHealth = 5;
+    public int maxHealth = 6;
     public int health { get { return currentHealth; } }
     public int currentHealth;
     int savedHealth;
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         camController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         lightScript = GameObject.FindGameObjectWithTag("light").GetComponent<changeLight>();
         moveSpeed = walkSpeed;
-        savedHealth = PlayerPrefs.GetInt("Health", 5);
+        savedHealth = PlayerPrefs.GetInt("Health", 6);
         currentHealth = savedHealth;
     }
 
