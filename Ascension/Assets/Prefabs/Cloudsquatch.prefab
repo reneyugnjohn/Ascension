@@ -5343,7 +5343,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dust: {fileID: 4369067483927320958}
   minisquatch: {fileID: 3275944213894841351, guid: fdde6791acac50f4188741487e4bf59c, type: 3}
-  detectRange: 7
 --- !u!95 &2785542952537276580
 Animator:
   serializedVersion: 5
@@ -5398,8 +5397,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
-  healthbar: {fileID: 0}
-  isBoss: 0
 --- !u!114 &2203276911477808798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5443,7 +5440,7 @@ MonoBehaviour:
   version: 5
   radius: 0.1
   height: 2
-  canMove: 0
+  canMove: 1
   maxSpeed: 8
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
