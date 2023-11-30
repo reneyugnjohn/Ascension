@@ -14,7 +14,6 @@ public class BossSpiral : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Idle");
-        Debug.Log("how");
         ai = animator.GetComponent<Pathfinding.AIBase>();
         info = animator.GetComponent<Boss>();
         ai.canMove = false;

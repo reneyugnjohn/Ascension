@@ -6,10 +6,13 @@ public class BossBullet : MonoBehaviour
 {
     Vector2 moveDir;
     float moveSpeed;
+   // BossBulletPool BPool;
+    //[SerializeField] bool isYellow;
 
     void OnEnable()
     {
         Invoke("Destroy", 3f);
+      //  BPool = GameObject.FindWithTag("BulletPool").GetComponent<BossBulletPool>();
     }
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,8 @@ public class BossBullet : MonoBehaviour
     void Update()
     {
         transform.Translate(moveDir * moveSpeed * Time.deltaTime);
+      //  if (BPool.isP2 && isYellow)
+       //     Destroy(gameObject);
     }
 
     public void SetMoveDirection(Vector2 dir)

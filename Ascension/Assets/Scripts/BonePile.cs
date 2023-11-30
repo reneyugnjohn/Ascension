@@ -72,23 +72,13 @@ public class BonePile : MonoBehaviour
     void Spawn()
     {
         int num = Random.Range(1, 101);
-        //85% chance for skeleton to spawn
-        if (num <= 85)
+        //95% chance for skeleton to spawn
+        if (num <= 95)
             Instantiate(skeleton, transform.position, Quaternion.identity, enemies.transform);
         else
         {
-            //10% chance for health potion
-            if(num <=95)
-            {
-                Instantiate(healthPot, transform.position, Quaternion.identity);
-            }
-            //5% chance for skill
-            else
-            {
-                //for now only spawn multishot but later change to make it a random skill drop
-                Instantiate(multiShot, transform.position, Quaternion.identity);
-            }
-
+            //5% chance for health potion
+            Instantiate(healthPot, transform.position, Quaternion.identity);
         }
     }
 }

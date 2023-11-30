@@ -7,8 +7,9 @@ public class BossBulletPool : MonoBehaviour
     public static BossBulletPool instance;
 
     [SerializeField] GameObject pooledBullet;
+    [SerializeField] GameObject P2pooledBullet;
     bool notEnoughBulletsInPool = true;
-
+    public bool isP2;
     List<GameObject> bullets;
 
     void Awake()
@@ -40,9 +41,17 @@ public class BossBulletPool : MonoBehaviour
             }
         }
 
-        if(notEnoughBulletsInPool)
+        if (notEnoughBulletsInPool)
         {
-            GameObject bul = Instantiate(pooledBullet);
+            GameObject bul = null;
+            if (!isP2)
+            {
+                bul = Instantiate(pooledBullet);
+            }
+            else
+            {
+                bul = Instantiate(P2pooledBullet);
+            }
             bul.SetActive(false);
             bullets.Add(bul);
             return bul;

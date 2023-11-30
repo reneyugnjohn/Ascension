@@ -6,11 +6,15 @@ public class BossPhaseTwo : StateMachineBehaviour
 {
     float timer;
     int rand;
+    //Boss info;
+    GameObject bPool;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Spiral");
         animator.ResetTrigger("Lightning");
+        bPool = GameObject.FindWithTag("BulletPool");
+        bPool.GetComponent<BossBulletPool>().isP2 = true;
         timer = 2f;
         rand = Random.Range(0, 2);
     }
