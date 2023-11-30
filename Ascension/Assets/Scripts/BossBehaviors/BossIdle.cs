@@ -16,7 +16,7 @@ public class BossIdle : StateMachineBehaviour
         animator.ResetTrigger("Lightning");
         ai = animator.GetComponent<Pathfinding.AIBase>();
         ai.canMove = false;
-        timer = 6f;
+        timer = 4f;
         rand = Random.Range(0, 2);
     }
 

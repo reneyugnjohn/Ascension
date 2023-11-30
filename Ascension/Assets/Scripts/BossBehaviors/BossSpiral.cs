@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossSpiral : StateMachineBehaviour
 {
     Boss info;
+    public GameObject lightningOrb;
     Pathfinding.AIBase ai;
     float timer;
     float bossCurrHealth;
@@ -17,7 +18,7 @@ public class BossSpiral : StateMachineBehaviour
         ai = animator.GetComponent<Pathfinding.AIBase>();
         info = animator.GetComponent<Boss>();
         ai.canMove = false;
-        info.callBulletSpiral(.2f);
+        info.callBulletSpiral(lightningOrb, .2f);
         timer = 5;
     }
 

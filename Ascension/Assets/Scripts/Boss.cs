@@ -9,7 +9,8 @@ public class Boss : MonoBehaviour
     Transform playerT;
     Damageable dmg;
 
-    public GameObject lightning;
+    GameObject lightning;
+    GameObject lightningOrb;
     public GameObject artifact;
     Animator anim;
     private SpriteRenderer sprite;
@@ -48,15 +49,20 @@ public class Boss : MonoBehaviour
         {
             Instantiate(artifact, new Vector2(161f, -45f), Quaternion.identity);
             Destroy(gameObject);
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(GameObject enemy in enemies)
+            {
+                Destroy(enemy);
+            }
         }
     }
 
-    public void callLightning(int amount)
+    public void callLightning(GameObject lightning, int amount)
     {
-        StartCoroutine(Lightning(amount));
+        StartCoroutine(Lightning(lightning, amount));
     }
 
-    IEnumerator Lightning(int amount)
+    IEnumerator Lightning(GameObject lightning, int amount)
     {
         for(int x=0; x<amount; x++)
         {
@@ -65,7 +71,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void callBulletSpiral(float delay)
+    public void callBulletSpiral(GameObject lightningOrb, float delay)
     {
         InvokeRepeating("Fire", 0f, delay);
        // Debug.Log("call");

@@ -11,7 +11,7 @@ public class BossPhaseTwo : StateMachineBehaviour
     {
         animator.ResetTrigger("Spiral");
         animator.ResetTrigger("Lightning");
-        timer = 3f;
+        timer = 2f;
         rand = Random.Range(0, 2);
     }
 

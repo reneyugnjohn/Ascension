@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossSpiralP2 : StateMachineBehaviour
 {
+    public GameObject lightningOrb;
     Boss info;
     float timer;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -12,7 +13,7 @@ public class BossSpiralP2 : StateMachineBehaviour
         animator.ResetTrigger("Idle");
         Debug.Log("how");
         info = animator.GetComponent<Boss>();
-        info.callBulletSpiral(.1f);
+        info.callBulletSpiral(lightningOrb, .1f);
         timer = 4;
     }
 

@@ -9,6 +9,7 @@ public class BossLightningP2 : StateMachineBehaviour
     float timer;
     float bossCurrHealth;
     float bossMaxHealth;
+    public GameObject lightning;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -16,7 +17,7 @@ public class BossLightningP2 : StateMachineBehaviour
         ai = animator.GetComponent<Pathfinding.AIBase>();
         ai.canMove = true;
         info = animator.GetComponent<Boss>();
-        info.callLightning(50);
+        info.callLightning(lightning, 50);
         timer = 2;
     }
 
