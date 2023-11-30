@@ -1175,8 +1175,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 1847435511}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &93971239
-PointEffector2D:
+--- !u!249 &93971239
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1187,12 +1188,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &99401882
@@ -1589,8 +1589,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 988450311}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &113258993
-PointEffector2D:
+--- !u!249 &113258993
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1601,12 +1602,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1 &115097375
@@ -3132,8 +3132,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 773823950}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &231787283
-PointEffector2D:
+--- !u!249 &231787283
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3144,12 +3145,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!4 &233342435 stripped
@@ -4828,8 +4828,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 1747032811}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &330346714
-PointEffector2D:
+--- !u!249 &330346714
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4840,12 +4841,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1 &330943836 stripped
@@ -4858,8 +4858,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 177183005}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &330943841
-PointEffector2D:
+--- !u!249 &330943841
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4870,12 +4871,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &336295887
@@ -5059,8 +5059,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 261997679}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &339221389
-PointEffector2D:
+--- !u!249 &339221389
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5071,12 +5072,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &342441969
@@ -7195,8 +7195,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 1402104336}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &478316659
-PointEffector2D:
+--- !u!249 &478316659
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7207,12 +7208,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!4 &480277635 stripped
@@ -17353,8 +17353,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 1808833183}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1191801085
-PointEffector2D:
+--- !u!249 &1191801085
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17365,12 +17366,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &1192071860
@@ -17856,8 +17856,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 104387147}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1233460255
-PointEffector2D:
+--- !u!249 &1233460255
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17868,12 +17869,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &1234579251
@@ -18818,8 +18818,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 963877830}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1284131761
-PointEffector2D:
+--- !u!249 &1284131761
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18830,12 +18831,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!4 &1284572591 stripped
@@ -19579,8 +19579,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 1758264893}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1313672092
-PointEffector2D:
+--- !u!249 &1313672092
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -19591,12 +19592,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!4 &1316737346 stripped
@@ -20772,8 +20772,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 1558750002}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1400608957
-PointEffector2D:
+--- !u!249 &1400608957
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -20784,12 +20785,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &1400941927
@@ -21639,8 +21639,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 598790224}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1464658553
-PointEffector2D:
+--- !u!249 &1464658553
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21651,12 +21652,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1 &1466087410
@@ -66781,8 +66781,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 1289469750}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1540284234
-PointEffector2D:
+--- !u!249 &1540284234
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -66793,12 +66794,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!4 &1543881501 stripped
@@ -84962,8 +84962,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 2038423069}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1666503153
-PointEffector2D:
+--- !u!249 &1666503153
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -84974,12 +84975,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1 &1667218518
@@ -92256,8 +92256,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5204909448192214927, guid: 9f1bdd1500df78b4185b0a0229e53bf5, type: 3}
   m_PrefabInstance: {fileID: 5533734929557704202}
   m_PrefabAsset: {fileID: 0}
---- !u!250 &1835358813
-PointEffector2D:
+--- !u!249 &1835358813
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92268,12 +92269,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
   m_ForceMagnitude: 100
   m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!1001 &1837509918
