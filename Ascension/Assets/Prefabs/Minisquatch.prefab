@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eb9f7c155d41e4baa6445c6529223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectRange: 7
 --- !u!95 &5623325078647209554
 Animator:
   serializedVersion: 5
@@ -309,6 +310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 2
+  healthbar: {fileID: 0}
+  isBoss: 0
 --- !u!114 &5803758743027945515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +355,7 @@ MonoBehaviour:
   version: 5
   radius: 0.1
   height: 2
-  canMove: 1
+  canMove: 0
   maxSpeed: 2
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
@@ -521,6 +524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1578424801435467385}
+  isTower: 0
+  isBoss: 0
 --- !u!225 &2512080891235449331
 CanvasGroup:
   m_ObjectHideFlags: 0
