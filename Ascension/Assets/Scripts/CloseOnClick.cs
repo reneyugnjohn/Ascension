@@ -9,6 +9,7 @@ public class CloseOnClick : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject optionsMenu;
+    public GameObject levelsMenu;
     [SerializeField] public float delayTime;
     
     public void OpenMenuCloseOptions()
@@ -23,6 +24,7 @@ public class CloseOnClick : MonoBehaviour
 
         // Close Options and Load Main Menu
         optionsMenu.SetActive(false);
+        levelsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 }

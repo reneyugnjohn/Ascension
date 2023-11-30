@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerFight : MonoBehaviour
 {
     public GameObject boss;
+    public CanvasGroup bossHealthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class TriggerFight : MonoBehaviour
     {
         PlayerController player = other.GetComponent<PlayerController>();
         Animator anim = boss.GetComponent<Animator>();
+        bossHealthBar.alpha = 1;
         anim.SetTrigger("StartFight");
     }
 

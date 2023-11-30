@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 6926952234117342727}
+  isTower: 0
+  isBoss: 0
 --- !u!225 &4004848855911563
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -504,6 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 4
   currentHealth: 4
+  healthbar: {fileID: 0}
+  isBoss: 0
 --- !u!114 &2848271676583508933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +552,7 @@ MonoBehaviour:
   radius: 0.1
   height: 2
   canMove: 0
-  maxSpeed: 2
+  maxSpeed: 3
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2

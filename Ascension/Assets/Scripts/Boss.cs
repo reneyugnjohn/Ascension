@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
 
     public GameObject lightning;
     public GameObject artifact;
+    Animator anim;
     private SpriteRenderer sprite;
 
     float angle = 0f;
@@ -25,6 +26,7 @@ public class Boss : MonoBehaviour
         playerT = GameObject.FindWithTag("Player").transform;
         dmg = GetComponent<Damageable>();
         sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -115,5 +117,15 @@ public class Boss : MonoBehaviour
     public void cancelSpawns()
     {
         CancelInvoke("SpawnMobs");
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.ChangeHealth(-2);
+            anim.SetTrigger("Smash");
+        }
     }
 }

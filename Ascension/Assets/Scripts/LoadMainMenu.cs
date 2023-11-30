@@ -7,7 +7,7 @@ public class LoadMainMenu : MonoBehaviour
 {
     public Animator transition;
 
-    public float transitionTime = 1f;
+    public float transitionTime = 2f;
 
     public void PlayGame()
     {
