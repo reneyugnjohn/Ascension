@@ -33,7 +33,8 @@ public class Damageable : MonoBehaviour
 
     public void ChangeHealth(float amt)
     {
-        ai.canMove = true;
+        if(!isBoss)
+            ai.canMove = true;
         currentHealth = Mathf.Clamp(currentHealth + amt, 0, maxHealth);
         healthbar.UpdateHealthbar(currentHealth, maxHealth);
     }

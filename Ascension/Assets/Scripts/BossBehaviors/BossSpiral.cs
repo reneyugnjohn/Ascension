@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossIdle : StateMachineBehaviour
+public class BossSpiral : StateMachineBehaviour
 {
+    Boss info;
+    Pathfinding.AIBase ai;
     float timer;
-    int rand;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Spiral");
-        animator.ResetTrigger("Lightning");
-        timer = 6f;
-        rand = Random.Range(0, 2);
+        animator.ResetTrigger("Idle");
+        Debug.Log("how");
+        ai = animator.GetComponent<Pathfinding.AIBase>();
+        info = animator.GetComponent<Boss>();
+        ai.canMove = false;
+        info.callBulletSpiral();
+        timer = 5;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,10 +24,10 @@ public class BossIdle : StateMachineBehaviour
     {
         if (timer <= 0)
         {
-            if (rand < 1)
-                animator.SetTrigger("Lightning");
-            else
-                animator.SetTrigger("Spiral");
+            info.cancelSpiral();
+            ai.canMove = true;
+
+            animator.SetTrigger("Idle");
         }
         else
             timer -= Time.deltaTime;

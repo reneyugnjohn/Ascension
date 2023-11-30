@@ -8752,6 +8752,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1271234032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271234034}
+  - component: {fileID: 1271234033}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1271234033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271234032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a986a9435f7daa843b5bd240fc81123e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledBullet: {fileID: 2777222942036969814, guid: b26b5559407a67a48abaf9ba68a3260e, type: 3}
+--- !u!4 &1271234034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271234032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 158.13249, y: -44.058758, z: 0.42426026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276210605
 GameObject:
   m_ObjectHideFlags: 0
@@ -9446,11 +9491,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe092fd8ddbc6844a165dc78ae0a5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiIcon: {fileID: 0}
+  pierceIcon: {fileID: 0}
+  expIcon: {fileID: 0}
+  poiIcon: {fileID: 0}
+  froIcon: {fileID: 0}
   multiShot: 0
   pierceShot: 0
   expArrow: 0
   poiArrow: 0
   froArrow: 0
+  ability: 
+  arrow: 
   InvUI: {fileID: 937686487}
 --- !u!95 &1353112006
 Animator:
@@ -61375,7 +61427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65beae2c5fa0d84faf087a20f4b2939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6756171335538443903, guid: a10b658bebb08944d9dbaf054d2cb36a, type: 3}
+  lightning: {fileID: 6756171335538443903, guid: a10b658bebb08944d9dbaf054d2cb36a, type: 3}
 --- !u!95 &1766317663
 Animator:
   serializedVersion: 5
@@ -61538,8 +61590,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 1000
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
