@@ -9,8 +9,12 @@ TagManager:
   - light
   - PlayerProjectile
   - Canvas
+<<<<<<< Updated upstream
   - Pillar
   - Shield
+=======
+  - wind
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

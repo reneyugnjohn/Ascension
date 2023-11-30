@@ -18,6 +18,8 @@ public class CloudsquatchEnemy : MonoBehaviour
     Damageable dmg;
     private Pathfinding.AIBase aipath;
 
+    [SerializeField] int detectRange;
+
 
     // Start is called before the first frame update
 
@@ -29,6 +31,7 @@ public class CloudsquatchEnemy : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         dmg = GetComponent<Damageable>();
         aipath = GetComponent<Pathfinding.AIBase>();
+        aipath.canMove = false;
     }
 
     // Update is called once per frame
@@ -42,6 +45,10 @@ public class CloudsquatchEnemy : MonoBehaviour
             Destroy(gameObject);
             GetComponent<LootBag>().InstantiateLoot(transform.position);
             Spawn();
+        }
+        if (Vector2.Distance(transform.position, playerT.position) <= detectRange)
+        {
+            aipath.canMove = true;
         }
     }
 

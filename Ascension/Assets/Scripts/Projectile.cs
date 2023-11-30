@@ -46,7 +46,10 @@ public class Projectile : MonoBehaviour
         {
             enemy.ChangeHealth(-1);
         }
-        Destroy(gameObject);
+        if (!other.gameObject.CompareTag("wind"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     // For pierce upgrade
