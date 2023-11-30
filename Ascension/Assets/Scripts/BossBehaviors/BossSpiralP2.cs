@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossPhaseTwo : StateMachineBehaviour
+public class BossSpiralP2 : StateMachineBehaviour
 {
+    Boss info;
     float timer;
-    int rand;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Spiral");
-        animator.ResetTrigger("Lightning");
-        timer = 3f;
-        rand = Random.Range(0, 2);
+        animator.ResetTrigger("Idle");
+        Debug.Log("how");
+        info = animator.GetComponent<Boss>();
+        info.callBulletSpiral(.1f);
+        timer = 4;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,10 +21,9 @@ public class BossPhaseTwo : StateMachineBehaviour
     {
         if (timer <= 0)
         {
-            if (rand < 1)
-                animator.SetTrigger("Lightning");
-            else
-                animator.SetTrigger("Spiral");
+            info.cancelSpiral();
+
+            animator.SetTrigger("Idle");
         }
         else
             timer -= Time.deltaTime;
@@ -32,6 +32,6 @@ public class BossPhaseTwo : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        info.cancelSpiral();
     }
 }

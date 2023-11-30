@@ -2,28 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossPhaseTwo : StateMachineBehaviour
+public class BossLightningP2 : StateMachineBehaviour
 {
+    Boss info;
+    Pathfinding.AIBase ai;
     float timer;
-    int rand;
+    float bossCurrHealth;
+    float bossMaxHealth;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Spiral");
-        animator.ResetTrigger("Lightning");
-        timer = 3f;
-        rand = Random.Range(0, 2);
+        animator.ResetTrigger("Phase2");
+        ai = animator.GetComponent<Pathfinding.AIBase>();
+        ai.canMove = true;
+        info = animator.GetComponent<Boss>();
+        info.callLightning(50);
+        timer = 2;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        bossCurrHealth = animator.GetComponent<Damageable>().currentHealth;
+        bossMaxHealth = animator.GetComponent<Damageable>().maxHealth;
+
         if (timer <= 0)
         {
-            if (rand < 1)
-                animator.SetTrigger("Lightning");
-            else
-                animator.SetTrigger("Spiral");
+            animator.SetTrigger("Idle");
         }
         else
             timer -= Time.deltaTime;
@@ -34,4 +39,5 @@ public class BossPhaseTwo : StateMachineBehaviour
     {
 
     }
+
 }

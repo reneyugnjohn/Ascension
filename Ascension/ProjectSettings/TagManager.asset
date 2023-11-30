@@ -9,6 +9,8 @@ TagManager:
   - light
   - PlayerProjectile
   - Canvas
+  - Pillar
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - TutorialRoom
   - DestructibleObject
   - Clouds
-  - 
+  - Boss
   - 
   - 
   - 

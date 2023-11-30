@@ -42,7 +42,7 @@ Transform:
   - {fileID: 2197611194246709569}
   - {fileID: 6827746755602653796}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6531243159261273800
 SpriteRenderer:
@@ -128,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010476112, y: -0.012245178}
+  m_Offset: {x: 0.06755829, y: -0.080099106}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -139,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27387762, y: 0.18747711}
+  m_Size: {x: 0.8370514, y: 0.6624489}
   m_EdgeRadius: 0
 --- !u!50 &5767448144243598899
 Rigidbody2D:
@@ -222,6 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 4
   currentHealth: 4
+  healthbar: {fileID: 0}
+  isBoss: 0
 --- !u!114 &3077482811058120386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,6 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 3193705703302009340}
+  isTower: 0
 --- !u!225 &4500051784329718430
 CanvasGroup:
   m_ObjectHideFlags: 0

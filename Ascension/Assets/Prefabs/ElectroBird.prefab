@@ -129,7 +129,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010476112, y: -0.012245178}
+  m_Offset: {x: 0.06409454, y: -0.077487946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -140,7 +140,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27387762, y: 0.18747711}
+  m_Size: {x: 0.85795593, y: 0.6534958}
   m_EdgeRadius: 0
 --- !u!50 &8448111490471123805
 Rigidbody2D:
@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 9054073932040434295}
+  isTower: 0
 --- !u!225 &3369708929783198502
 CanvasGroup:
   m_ObjectHideFlags: 0

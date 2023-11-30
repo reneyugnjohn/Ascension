@@ -1,6 +1,8 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Boss : MonoBehaviour
 {
@@ -8,43 +10,62 @@ public class Boss : MonoBehaviour
     Damageable dmg;
 
     public GameObject lightning;
+    public GameObject artifact;
+    private SpriteRenderer sprite;
 
     float angle = 0f;
     Vector2 bulletMoveDirection;
+    Vector3 direction;
+
+    public List<GameObject> mobs;
 
     // Start is called before the first frame update
     void Start()
     {
         playerT = GameObject.FindWithTag("Player").transform;
         dmg = GetComponent<Damageable>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dmg.currentHealth <= 0)
+        direction = playerT.position - transform.position;
+        direction.Normalize();
+
+        if (direction.x < 0f)
         {
+            sprite.flipX = true;
+        }
+        else if (direction.x >= 0f)
+        {
+            sprite.flipX = false;
+        }
+
+        if (dmg.currentHealth <= 0)
+        {
+            Instantiate(artifact, new Vector2(161f, -45f), Quaternion.identity);
             Destroy(gameObject);
         }
     }
 
-    public void callLightning()
+    public void callLightning(int amount)
     {
-        StartCoroutine(Lightning());
+        StartCoroutine(Lightning(amount));
     }
 
-    IEnumerator Lightning()
+    IEnumerator Lightning(int amount)
     {
-        for(int x=0; x<30; x++)
+        for(int x=0; x<amount; x++)
         {
             Instantiate(lightning, new Vector2(Random.Range(149,173), Random.Range(-56,-34)), transform.rotation);
             yield return new WaitForSeconds(0.1f);
         }
     }
 
-    public void callBulletSpiral()
+    public void callBulletSpiral(float delay)
     {
-        InvokeRepeating("Fire", 0f, .2f);
+        InvokeRepeating("Fire", 0f, delay);
        // Debug.Log("call");
         //StartCoroutine(Spiral());
     }
@@ -81,5 +102,18 @@ public class Boss : MonoBehaviour
 
         if (angle >= 360f)
             angle = 0f;
+    }
+
+    public void callSpawns()
+    {
+        InvokeRepeating("SpawnMobs", 0f, 5);
+    }
+    void SpawnMobs()
+    {
+        Instantiate(mobs[Random.Range(0,mobs.Count)], new Vector2(Random.Range(149, 173), Random.Range(-56, -34)), Quaternion.identity);
+    }
+    public void cancelSpawns()
+    {
+        CancelInvoke("SpawnMobs");
     }
 }

@@ -7,18 +7,34 @@ public class EnemyHealthbar : MonoBehaviour
 {
     public Slider slider;
     CanvasGroup canvasGroup;
+    public bool isTower;
+    public bool isBoss;
 
     void Start()
     {
         canvasGroup = GetComponent <CanvasGroup>();
-        canvasGroup.alpha = 0;
+        if (!isTower )
+        {
+            canvasGroup.alpha = 0;
+        }
     }
     // Update is called once per frame
     void Update()
-    {
-        if(slider.value < 1)
+    {   
+        if (!isTower)
         {
-            canvasGroup.alpha = 1;
+            if (slider.value < 1)
+            {
+                canvasGroup.alpha = 1;
+            }
+        }
+
+        if (isBoss)
+        {
+            if (slider.value <= 0)
+            {
+                canvasGroup.alpha = 0;
+            }
         }
     }
 
